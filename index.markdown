@@ -8,6 +8,10 @@ layout: home
 
 ### Survey
 
+#### IEEE communication magazine (16年-)
+A Survey of Coflow Scheduling Schemes for Data Center Networks
++ 数据中心调度问题，许多同步流中最慢的那条流决定了该任务的完成时间
+
 ### Application of ML
 
 Srijan Kumar, Francesca Spezzano, and V.S. Subrahmanian. 2015. VEWS: A Wikipedia Vandal Early Warning System. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’15). Association for Computing Machinery, New York, NY, USA, 607–616. DOI:https://doi.org/10.1145/2783258.2783367
