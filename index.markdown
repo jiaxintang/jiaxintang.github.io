@@ -10,9 +10,19 @@ layout: home
 
 #### IEEE communication magazine (16年-)
 A Survey of Coflow Scheduling Schemes for Data Center Networks
-+ 数据中心调度问题，许多同步流中最慢的那条流决定了该任务的完成时间，降低整体传输时间。
++ 数据中心调度问题，许多同步流中最慢的那条流决定了该任务的完成时间，降低整体传输时间。介绍一个“新概念”的survey
 +  论文架构：
     + Introduction：先介绍Cluster computing applications，引出coflows调度问题，该问题的challenge。
+    + cluster computing applications：分为三类
+    + coflow model：characteristics/structure/objective
+    + Information-aware coflow scheduling: centralized/distributed
+    + Information-Agnostic coflow scheduling
+    + optimize other objectives
+    + challenges and broader perspective
+    + conclusion
+    
+A Survey on Access Control in Fog Computing
++ 
 
 ### Application of ML
 
