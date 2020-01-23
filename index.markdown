@@ -43,6 +43,18 @@ A Survey on Behavior Recognition Using WiFi Channel State Information
     + discussions
     + conclusion and future work
 
+A Survey on Rapidly Deployable Solutions for Post-Disaster Networks
++ 灾后部署
++ 论文架构：
+    + Introduction
+    + Requirements
+    + Wireless technologies
+    + rapidly deployable networks
+    + metropolitan Area Approach
+    + local Area Approach
+    + Disscussion
+
+
 ### Application of ML
 
 Srijan Kumar, Francesca Spezzano, and V.S. Subrahmanian. 2015. VEWS: A Wikipedia Vandal Early Warning System. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’15). Association for Computing Machinery, New York, NY, USA, 607–616. DOI:https://doi.org/10.1145/2783258.2783367
