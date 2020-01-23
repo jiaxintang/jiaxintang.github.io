@@ -11,7 +11,7 @@ layout: home
 #### IEEE communication magazine (16年-)
 A Survey of Coflow Scheduling Schemes for Data Center Networks
 + 数据中心调度问题，许多同步流中最慢的那条流决定了该任务的完成时间，降低整体传输时间。介绍一个“新概念”的survey
-+  论文架构：
++ 论文架构：
     + Introduction：先介绍Cluster computing applications，引出coflows调度问题，该问题的challenge。
     + cluster computing applications：分为三类
     + coflow model：characteristics/structure/objective
@@ -22,7 +22,18 @@ A Survey of Coflow Scheduling Schemes for Data Center Networks
     + conclusion
     
 A Survey on Access Control in Fog Computing
-+ 
++ 论文架构：
+    + Introduction：雾计算的应用背景、雾计算的安全问题、访问控制的重要性
+    + Fog computing overview
+    + Access control In Fog computing：requirements/models
+    + state-of-the-art Access control In Fog computing
+    + challenges And Future research directions
+    + conclusion
+    
+Survey of Bio-Inspired Resource Allocation Algorithms and MAC Protocol Design
++ 不是标准的survey，作者提出了一个新的协议设计，并且通过simulation做了performance evaluation
+
+
 
 ### Application of ML
 
