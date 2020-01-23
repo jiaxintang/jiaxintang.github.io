@@ -33,7 +33,7 @@ A Survey on Access Control in Fog Computing
 Survey of Bio-Inspired Resource Allocation Algorithms and MAC Protocol Design
 + 不是标准的survey，作者提出了一个新的协议设计，并且通过simulation做了performance evaluation
 
-
+A Survey on Behavior Recognition Using WiFi Channel State Information
 
 ### Application of ML
 
