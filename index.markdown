@@ -10,7 +10,9 @@ layout: home
 
 #### IEEE communication magazine (16年-)
 A Survey of Coflow Scheduling Schemes for Data Center Networks
-+ 数据中心调度问题，许多同步流中最慢的那条流决定了该任务的完成时间
++ 数据中心调度问题，许多同步流中最慢的那条流决定了该任务的完成时间，降低整体传输时间。
++  论文架构：
+    + Introduction：先介绍Cluster computing applications，引出coflows调度问题，该问题的challenge。
 
 ### Application of ML
 
