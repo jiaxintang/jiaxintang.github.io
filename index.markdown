@@ -36,12 +36,12 @@ Survey of Bio-Inspired Resource Allocation Algorithms and MAC Protocol Design
 A Survey on Behavior Recognition Using WiFi Channel State Information
 + 通过WiFi进行室内行为识别
 + 论文架构：
-       + background on traditional activity recognition systems
-       + WiFi channel state information：介绍WiFi，人的活动对WiFi的影响
-       + Wi-Fi csi-based behavior recognition：除了介绍别人的方法，自己提出了使用LSTM的方法，但是只写了一小段
-       + evaluation of different methods
-       + discussions
-       + conclusion and future work
+    + background on traditional activity recognition systems
+    + WiFi channel state information：介绍WiFi，人的活动对WiFi的影响
+    + Wi-Fi csi-based behavior recognition：除了介绍别人的方法，自己提出了使用LSTM的方法，但是只写了一小段
+    + evaluation of different methods
+    + discussions
+    + conclusion and future work
 
 ### Application of ML
 
