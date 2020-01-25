@@ -54,6 +54,49 @@ A Survey on Rapidly Deployable Solutions for Post-Disaster Networks
     + local Area Approach
     + Disscussion
 
+Approaches to End-User Applications Portability in the Cloud: A Survey
++ 论文架构：
+    + Introduction：简单介绍三种云计算服务提供方式：SaaS、PaaS、IaaS，便携性要求应用可以在不同的PaaS之间迁移，与之前这类的survey的区别。
+    + requirements for cloud end-user applications portability：云应用的life cycle，development、deployment、management的要求
+    + work done within the standardization bodies：已有的一些云应用的标准
+    + work done within research projects And academia：一些研究项目概述、评价
+    + research directions：一些研究方法，已有的项目涉及了什么方向
+    + conclusion
+
+Network Slicing in 5G: Survey and Challenges
++ 第一篇关于5G的survey
++ 论文架构
+    + Introduction：因为5G还没有明确的定义，描述了5G未来可能的样子，告知这是第一篇5G的survey
+    + network slicing in the 5g architecture：一些应用场景和要求、目前已有的架构
+    + state of the art in 5g network slicing：每一层都讲了scope、existing work、一些需要说明的点
+        + Infrastructure layer
+    	+ network function layer
+    	+ service layer and MANO
+    + challenges
+    + summary
+
+Information-Centric Networking for Connected Vehicles:
+A Survey and Future Perspectives
++ 论文架构
+	+ Introduction：车联网引入information-centric networking (ICN)
+	+ Information-centric networking
+	+ ICN for connected vehicles: motivations
+	+ Conclusion
+
+Hybrid Beamforming for Massive MIMO: A Survey
++ 这一篇有比较多的图表，大部分来自引用，但自己重新绘制了
+
+Recent Research on Massive MIMO Propagation Channels: A Survey
++ 论文架构
+	+ Introduction
+	+ Key Issues In massive MIMO Propagation channels：特征、与传统的不同
+	+ recent massive MIMO channel Measurements：设备、结果、挑战
+	+ recent massive MIMO Propagation Modeling approaches
+	+ future directions for massive MIMO channel Modeling
+	+ conclusion
+
+A Survey of Point-of-Interest Recommendation in Location-Based Social Networks
++ AAAI,15 workshop，按照主要影响的特征对方法进行分类
 
 ### Application of ML
 
