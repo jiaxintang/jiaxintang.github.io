@@ -128,4 +128,7 @@ Camille Cobb and Tadayoshi Kohno. 2017. How Public Is My Private Life? Privacy i
 Dingqi Yang, Bingqing Qu, Jie Yang, and Philippe Cudre-Mauroux. 2019. Revisiting User Mobility and Social Relationships in LBSNs: A Hypergraph Embedding Approach. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 2147–2157. DOI:https://doi.org/10.1145/3308558.3313635
 + 数据集：从Foursquares上获取check-in，从Twitter上获取社交关系，作者先对影响因素进行了分析，在提出了LBSN2Vec这种Embedding方法，LBSN2Vec基于随机游走，除了在基于社交关系的用户图上游走，还可以停留在一个用户点上对时空语义特征进行游走，同时作者提出了基于余弦相似性的最优拟合方法。在实验部分，分朋友预测和地址预测两个任务和多种Baseline进行了详细对比。这篇文章值得我借鉴的点是对特征的分析，以及作者每提出一个观点都有充分的理由进行论证，如为什么使用余弦相似性而不适用点乘。
 
+Yao H, Wu F, Ke J, et al. Deep multi-view spatial-temporal network for taxi demand prediction[C]//Thirty-Second AAAI Conference on Artificial Intelligence. 2018.
++ 对出租车的需求量进行预测，使用local CNN处理空间特征，LSTM处理时间特征，构建图来描述区域之间功能相似性，并使用了LINE来计算每个点的Embedding，参与训练。这篇论文的模型和我们的模型有一定的相似性，可以参考学习它对模型的介绍。论文选择的baseline是一些简单的机器学习方法，这一点可能不太好，但是对与baseline比较的分析比较细致。
+
 ### Reinforcement Learning & Network
