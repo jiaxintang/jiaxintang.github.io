@@ -138,6 +138,10 @@ Wang B, Zhang L, Gong N Z. SybilSCAR: Sybil detection in online social networks 
 + 论文优点：严格的理论证明，对之前工作的整理分析
 + 疑问：实验机器内存16G，最大的一个数据集，21,297,772 nodes，265,025,545 edges，如果算法使用文中所示伪代码，使用邻接矩阵进行存储，至少需要422443G；如果使用边际数组进行存储，大约需要2G，但是实现会非常复杂，且根据作者所言，是用C++实现的。在Github找到了代码。
 
+Zongtao Liu, Yang Yang, Wei Huang, Zhongyi Tang, Ning Li, and Fei Wu. 2019. How Do Your Neighbors Disclose Your Information: Social-Aware Time Series Imputation. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 1164–1174. DOI:https://doi.org/10.1145/3308558.3313714
++ 对缺失数据的预测，作者使用社交影响和时间序列预测共同推测多维时间序列中缺失的值，主要使用了TLSTM（LSTM的变体，利用衰减，考虑了时间序列之间的时间间隔）和注意力机制，但这两者都不是作者提出的，baseline较多，也有自身模型各部分的分析。
++ 值得借鉴：也没有自己提出的模块，但是论文对模型的分析非常具体，也说明了自己的创新点，即应用和模型的第一次结合。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
