@@ -133,6 +133,11 @@ Yao H, Wu F, Ke J, et al. Deep multi-view spatial-temporal network for taxi dema
 
 A semantic based Web page classification strategy using multi-layered domain ontology
 
+Wang B, Zhang L, Gong N Z. SybilSCAR: Sybil detection in online social networks via local rule based propagation[C]//IEEE INFOCOM 2017-IEEE Conference on Computer Communications. IEEE, 2017: 1-9.
++ 论文提出了一种新的Sybil detection的方法，作者认为之前的方法分为两类，一类是基于随机游走的（如SybilRank，不能同时利用确定的正常用户和确定的恶意用户，对标注的噪音不具有鲁棒性）；一类是基于循环信念传播的（如SybilBelief，不scalable，因为要保存每条边的影响，不一定能收敛），作者提出了新方法综合了这两种方法，作者提出了local rule的概念，即后验概率由先验概率（theta，0.5，1-theta；实验中theta=0.9）和邻居影响共同决定，作者对于方法的收敛性做出了严格的理论证明，关于算法的效率，渐进复杂度是O(E)，但是在实验部分证明实际使用的空间、时间比SybilBelief少。
++ 论文优点：严格的理论证明
++ 疑问：实验机器内存16G，最大的一个数据集，21,297,772 nodes，265,025,545 edges，如果算法使用文中所示伪代码，使用邻接矩阵进行存储
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
