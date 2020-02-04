@@ -145,3 +145,6 @@ Zongtao Liu, Yang Yang, Wei Huang, Zhongyi Tang, Ning Li, and Fei Wu. 2019. How 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
+
+Peng B, Li X, Gao J, et al. Deep Dyna-Q: Integrating Planning for Task-Completion Dialogue Policy Learning[C]//Proceedings of the 56th ACL. 2018: 2182-2192.
++ 这篇论文将Dyna-Q应用在了对话的场景中，Dyna是一种model-based RL框架，包括一个类似DQN的模型来反应真实环境中针对每个action的reward和next state以及一个world model来模拟环境，通过nn给出action的reward和next，最终的模型训练都基于这两种环境一起对策略网络进行训练。
