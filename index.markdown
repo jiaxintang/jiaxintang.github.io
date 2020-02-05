@@ -148,3 +148,6 @@ Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Contro
 
 Peng B, Li X, Gao J, et al. Deep Dyna-Q: Integrating Planning for Task-Completion Dialogue Policy Learning[C]//Proceedings of the 56th ACL. 2018: 2182-2192.
 + 这篇论文将Dyna-Q应用在了对话的场景中，Dyna是一种model-based RL框架，包括一个类似DQN的模型来反应真实环境中针对每个action的reward和next state以及一个world model来模拟环境，通过nn给出action的reward和next，最终的模型训练都基于这两种环境一起对策略网络进行训练。
+
+Racanière S, Weber T, Reichert D, et al. Imagination-augmented agents for deep reinforcement learning[C]//NIPS. 2017: 5690-5701.
++ 这篇论文提出一种model-based的模型I2A，环境模型基于现在的环境和现在的action对未来的环境和可能的奖励进行预测，策略网络会同时基于环境模型的输出和真实观察做出决策，作者没有像上一篇论文一样给出清晰的伪代码，因为细节理解不太清楚，需要进一步看源代码。
