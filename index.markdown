@@ -151,3 +151,7 @@ Peng B, Li X, Gao J, et al. Deep Dyna-Q: Integrating Planning for Task-Completio
 
 Racanière S, Weber T, Reichert D, et al. Imagination-augmented agents for deep reinforcement learning[C]//NIPS. 2017: 5690-5701.
 + 这篇论文提出一种model-based的模型I2A，环境模型基于现在的环境和现在的action对未来的环境和可能的奖励进行预测，策略网络会同时基于环境模型的输出和真实观察做出决策，作者没有像上一篇论文一样给出清晰的伪代码，因为细节理解不太清楚，需要进一步看源代码。
+
+Feinberg V, Wan A, Stoica I, et al. Model-based value estimation for efficient model-free reinforcement learning[J]. ICML, 2018.
++ 一种新的把环境模型引入model-free的方法，作者把环境模型先展开一定步数之后再进行Q值预估。也就是说，在传统的更新方式中，target Q值是下一步Q值的预估，而在这里，target Q值是先通过环境模型进行模拟一段路径之后，再进行Q值预估。这样Q值的预估就融合了基于环境模型的短期预估以及基于target_Q网络的长期预估。文中对过去Model-based RL的总结很好，分为三类：（1）直接将动态系统融合进值梯度（在进行Q值或者V值预估时，environment model 和agent做交互，交互过程中的信息作为context提供给agent来帮助其决策）；（2）将想象作为新的额外的训练数据；（3）将想象的context用来做值估计。
+
