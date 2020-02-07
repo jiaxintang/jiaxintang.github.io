@@ -142,6 +142,9 @@ Zongtao Liu, Yang Yang, Wei Huang, Zhongyi Tang, Ning Li, and Fei Wu. 2019. How 
 + 对缺失数据的预测，作者使用社交影响和时间序列预测共同推测多维时间序列中缺失的值，主要使用了TLSTM（LSTM的变体，利用衰减，考虑了时间序列之间的时间间隔）和注意力机制，但这两者都不是作者提出的，baseline较多，也有自身模型各部分的分析。
 + 值得借鉴：也没有自己提出的模块，但是论文对模型的分析非常具体，也说明了自己的创新点，即应用和模型的第一次结合。
 
+Chuxu Zhang, Dongjin Song, Chao Huang, Ananthram Swami, and Nitesh V. Chawla. 2019. Heterogeneous Graph Neural Network. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 793–803. DOI:https://doi.org/10.1145/3292500.3330961
++ 异构图神经网络，已有的图神经网络大多是基于同质的图，即每个点的类型是一样的，比如都是作者；作者针对的是每个点的类型不同的图，同时每个点本身的特征也有多种类型。方法如下：先使用random walk来选出和一个点有关的点，并根据类型进行分类；使用两个神经网络分别来结合不同类型的特征和不同类型的点，用了bilstm来结合不同特征是论文的一个亮点。实验部分，选择了link prediction、Recommendation、Classification and Clustering和Inductive Classification and Clustering任务，5种graph Embedding的baseline，并对方法本身进行了超参数分析和各部分的分析。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
@@ -154,4 +157,3 @@ Racanière S, Weber T, Reichert D, et al. Imagination-augmented agents for deep 
 
 Feinberg V, Wan A, Stoica I, et al. Model-based value estimation for efficient model-free reinforcement learning[J]. ICML, 2018.
 + 一种新的把环境模型引入model-free的方法，作者把环境模型先展开一定步数之后再进行Q值预估。也就是说，在传统的更新方式中，target Q值是下一步Q值的预估，而在这里，target Q值是先通过环境模型进行模拟一段路径之后，再进行Q值预估。这样Q值的预估就融合了基于环境模型的短期预估以及基于target_Q网络的长期预估。文中对过去Model-based RL的总结很好，分为三类：（1）直接将动态系统融合进值梯度（在进行Q值或者V值预估时，environment model 和agent做交互，交互过程中的信息作为context提供给agent来帮助其决策）；（2）将想象作为新的额外的训练数据；（3）将想象的context用来做值估计。
-
