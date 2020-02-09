@@ -145,6 +145,9 @@ Zongtao Liu, Yang Yang, Wei Huang, Zhongyi Tang, Ning Li, and Fei Wu. 2019. How 
 Chuxu Zhang, Dongjin Song, Chao Huang, Ananthram Swami, and Nitesh V. Chawla. 2019. Heterogeneous Graph Neural Network. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 793–803. DOI:https://doi.org/10.1145/3292500.3330961
 + 异构图神经网络，已有的图神经网络大多是基于同质的图，即每个点的类型是一样的，比如都是作者；作者针对的是每个点的类型不同的图，同时每个点本身的特征也有多种类型。方法如下：先使用random walk来选出和一个点有关的点，并根据类型进行分类；使用两个神经网络分别来结合不同类型的特征和不同类型的点，用了bilstm来结合不同特征是论文的一个亮点。实验部分，选择了link prediction、Recommendation、Classification and Clustering和Inductive Classification and Clustering任务，5种graph Embedding的baseline，并对方法本身进行了超参数分析和各部分的分析。
 
+Liu Q, Wu S, Wang L, et al. Predicting the next location: A recurrent model with spatial and temporal contexts[C]//Thirtieth AAAI conference on artificial intelligence. 2016.
++ 位置预测，使用了改进的RNN模型，引入了时间间隔和地理位置距离的因素，pairwize ranking作为目标优化，处理冷启动问题，作者只考虑了将时间间隔和地理距离在一定范围内的数据，且使用线性调整到一定范围。实验中与多种baseline进行对比，并对参数选择和收敛性进行了分析。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
