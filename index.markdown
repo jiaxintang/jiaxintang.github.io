@@ -148,6 +148,9 @@ Chuxu Zhang, Dongjin Song, Chao Huang, Ananthram Swami, and Nitesh V. Chawla. 20
 Liu Q, Wu S, Wang L, et al. Predicting the next location: A recurrent model with spatial and temporal contexts[C]//Thirtieth AAAI conference on artificial intelligence. 2016.
 + 位置预测，使用了改进的RNN模型，引入了时间间隔和地理位置距离的因素，pairwize ranking作为目标优化，处理冷启动问题，作者只考虑了将时间间隔和地理距离在一定范围内的数据，且使用线性调整到一定范围。实验中与多种baseline进行对比，并对参数选择和收敛性进行了分析。
 
+Wenyi Xiao, Huan Zhao, Haojie Pan, Yangqiu Song, Vincent W. Zheng, and Qiang Yang. 2019. Beyond Personalization: Social Content Recommendation for Creator Equality and Consumer Satisfaction. In Proc. KDD 19. Association for Computing Machinery, New York, NY, USA, 235–245. DOI:https://doi.org/10.1145/3292500.3330965
++ 推荐算法，向用户推荐文章，评价时不仅考虑到了消费者的满意度，还使用了Gini系数考虑到了创作者的均衡性，尽可能向用户推荐丰富的文章，模型中使用CNN处理词级别，GRU处理句级别，使用attention结合社交信息，使用蒙特卡洛树选择高影响力的朋友（使用了多种标准并进行了比较）。评价时使用多种baseline，也做了参数分析和切割分析。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
