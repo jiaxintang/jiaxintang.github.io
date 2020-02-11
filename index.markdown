@@ -151,6 +151,9 @@ Liu Q, Wu S, Wang L, et al. Predicting the next location: A recurrent model with
 Wenyi Xiao, Huan Zhao, Haojie Pan, Yangqiu Song, Vincent W. Zheng, and Qiang Yang. 2019. Beyond Personalization: Social Content Recommendation for Creator Equality and Consumer Satisfaction. In Proc. KDD 19. Association for Computing Machinery, New York, NY, USA, 235–245. DOI:https://doi.org/10.1145/3292500.3330965
 + 推荐算法，向用户推荐文章，评价时不仅考虑到了消费者的满意度，还使用了Gini系数考虑到了创作者的均衡性，尽可能向用户推荐丰富的文章，模型中使用CNN处理词级别，GRU处理句级别，使用attention结合社交信息，使用蒙特卡洛树选择高影响力的朋友（使用了多种标准并进行了比较）。评价时使用多种baseline，也做了参数分析和切割分析。
 
+Wei-Lin Chiang, Xuanqing Liu, Si Si, Yang Li, Samy Bengio, and Cho-Jui Hsieh. 2019. Cluster-GCN: An Efficient Algorithm for Training Deep and Large Graph Convolutional Networks. In Proc. KDD 19. Association for Computing Machinery, New York, NY, USA, 257–266. DOI:https://doi.org/10.1145/3292500.3330925
++ 对GCN的效率进行优化，传统的多层GCN无论是训练效率还是内存占用都很大，因此有使用mini-batch的方法，但是复杂度依然和层数成指数关系，文章定义了Embedding利用率的概念，对图进行聚类，减少batch之间的边数，提高Embedding利用率，但由于聚类会使得图中一些类与类之间的边被忽略，同时改变分布，因此每一个batch选几类进行训练。文中作者强调了之前此类工作的缺点，同时也说明了提出的方法可能存在的问题，以及可做的优化，实验部分对多个数据集、多层的网络进行了对比，非常详细。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
