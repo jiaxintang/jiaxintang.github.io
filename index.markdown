@@ -157,6 +157,9 @@ Wei-Lin Chiang, Xuanqing Liu, Si Si, Yang Li, Samy Bengio, and Cho-Jui Hsieh. 20
 Haoji Hu and Xiangnan He. 2019. Sets2Sets: Learning from Sequential Sets with Neural Networks. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1491–1499. DOI:https://doi.org/10.1145/3292500.3330979
 + 时间序列集到时间序列集的预测，用一些用户过去的时间序列数据来预测未来一段时间的数据，作者定义了这一类问题，并提出了基于encoder-decoder框架的模型，使用了特殊的Embedding，并利用了attention机制。作者考虑到了过去出现过的商品更有可能未来被使用，因此对最后一层网络进行了调整。同时loss function考虑到了label数量不平衡的问题。在实验部分，作者列出了要分析的问题，使文章逻辑很清晰；作者在性能和其他方法的对比的分析上，写得非常详细，并说明了可能的理由。作者也对自身模型的一些变体做了研究。
 
+Kai Shu, Limeng Cui, Suhang Wang, Dongwon Lee, and Huan Liu. 2019. DEFEND: Explainable Fake News Detection. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 395–405. DOI:https://doi.org/10.1145/3292500.3330935
++ 假新闻探测，通过contents和comments进行分类，考虑了词和句层次的特征，使用了双向GRU分别建模，并使用attention机制连接不同特征，论文重点强调了可解释性，我觉得这部分是整个论文的亮点，作者通过attention的系数决定重要性排序，评论部分明确提出了三个问题，并分别与一些Baseline进行对比，并使用case study直观展示。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
