@@ -172,3 +172,10 @@ Racanière S, Weber T, Reichert D, et al. Imagination-augmented agents for deep 
 
 Feinberg V, Wan A, Stoica I, et al. Model-based value estimation for efficient model-free reinforcement learning[J]. ICML, 2018.
 + 一种新的把环境模型引入model-free的方法，作者把环境模型先展开一定步数之后再进行Q值预估。也就是说，在传统的更新方式中，target Q值是下一步Q值的预估，而在这里，target Q值是先通过环境模型进行模拟一段路径之后，再进行Q值预估。这样Q值的预估就融合了基于环境模型的短期预估以及基于target_Q网络的长期预估。文中对过去Model-based RL的总结很好，分为三类：（1）直接将动态系统融合进值梯度（在进行Q值或者V值预估时，environment model 和agent做交互，交互过程中的信息作为context提供给agent来帮助其决策）；（2）将想象作为新的额外的训练数据；（3）将想象的context用来做值估计。
+
+
+A modern AQM is just one piece of the solution to bufferbloat.
++ CoDel，论文首先解释了Bufferbloat，描述了当带宽发生变化时的包的情况，以及在没有突发流量的情况下buffer中队列为什么不为0；同时论文对之前的AQM的缺点进行了总结：参数难配置、不能区分好排队和坏排队、对链路带宽、流量、rtt敏感、不能随链路带宽动态变化、不够简单高效，这些同时就是CoDel的优点。CoDel通过记录一段interval（通过瓶颈的最坏情况RTT的时间）中的最低排队时延来控制丢包，当该值小于target时不丢包，当大于时丢包直到buffer中的包数量小于MTU对应的应有的字节数。这种方法实现简单，不需要锁，作者在ns2中做了模拟，分为静态网络和动态网络特征，分别与RED和Drop-tail做了对比，结果显示时延较低，利用率较高，公平性较高。
+
+Feinberg V, Wan A, Stoica I, et al. Model-based value estimation for efficient model-free reinforcement learning[J]. ICML, 2018.
+Feinberg V, Wan A, Stoica I, et al. Model-based value estimation for efficient model-free reinforcement learning[J]. ICML, 2018.
