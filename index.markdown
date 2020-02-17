@@ -160,6 +160,10 @@ Haoji Hu and Xiangnan He. 2019. Sets2Sets: Learning from Sequential Sets with Ne
 Kai Shu, Limeng Cui, Suhang Wang, Dongwon Lee, and Huan Liu. 2019. DEFEND: Explainable Fake News Detection. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 395–405. DOI:https://doi.org/10.1145/3292500.3330935
 + 假新闻探测，通过contents和comments进行分类，考虑了词和句层次的特征，使用了双向GRU分别建模，并使用attention机制连接不同特征，论文重点强调了可解释性，我觉得这部分是整个论文的亮点，作者通过attention的系数决定重要性排序，评论部分明确提出了三个问题，并分别与一些Baseline进行对比，并使用case study直观展示。
 
+Namyong Park, Andrey Kan, Xin Luna Dong, Tong Zhao, and Christos Faloutsos. 2019. Estimating Node Importance in Knowledge Graphs Using Graph Neural Networks. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 596–606. DOI:https://doi.org/10.1145/3292500.3330855
++ 知识图谱中的点重要性估计，使用了监督学习的方法对重要性进行拟合，与传统PageRank一类的方法不同，文中使用的数据集都包含可以代表重要性的特征，结果现在在同一领域使用监督学习的方法比不用训练的方法好，文中使用的方法为基于Attention的神经网络，使用attention对邻居节点的分数进行汇总，对于谓语（两点关系）也使用attention，中心性使用度来衡量，但由于中心性的影响不大，使用了一个参数来调整该属性的大小。论文介绍模型时，根据功能介绍了每个部分使用的模型，再汇总介绍。实验部分比较了计算重要性的一些传统方法和监督学习的一些常用方法，个人觉得实验部分不如之前读的几篇论文写得好。
+
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
