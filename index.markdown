@@ -163,6 +163,9 @@ Kai Shu, Limeng Cui, Suhang Wang, Dongwon Lee, and Huan Liu. 2019. DEFEND: Expla
 Namyong Park, Andrey Kan, Xin Luna Dong, Tong Zhao, and Christos Faloutsos. 2019. Estimating Node Importance in Knowledge Graphs Using Graph Neural Networks. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 596–606. DOI:https://doi.org/10.1145/3292500.3330855
 + 知识图谱中的点重要性估计，使用了监督学习的方法对重要性进行拟合，与传统PageRank一类的方法不同，文中使用的数据集都包含可以代表重要性的特征，结果现在在同一领域使用监督学习的方法比不用训练的方法好，文中使用的方法为基于Attention的神经网络，使用attention对邻居节点的分数进行汇总，对于谓语（两点关系）也使用attention，中心性使用度来衡量，但由于中心性的影响不大，使用了一个参数来调整该属性的大小。论文介绍模型时，根据功能介绍了每个部分使用的模型，再汇总介绍。实验部分比较了计算重要性的一些传统方法和监督学习的一些常用方法，个人觉得实验部分不如之前读的几篇论文写得好。
 
+Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu, and Tat-Seng Chua. 2019. KGAT: Knowledge Graph Attention Network for Recommendation. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 950–958. DOI:https://doi.org/10.1145/3292500.3330989
++ 利用知识图谱辅助推荐。知识图谱中的高阶特征对推荐有很大帮助，比如两个item和同一个entity有不同性质的关联。作者提出的模型首先使用Embedding层来计算Embedding，该层使用了知识图谱中常用的TransR方法；再使用attention层，这一层是自网络和邻居影响的结合，作者使用了3种结合的方法并在实验部分对比；最终的loss是这两层的loss之和。在实验部分，提出并回答了3个问题：与baseline对比，自身各部分的性能（对各部分替换不同的方法，对性能进行对比），可解释性（case study），使文章更有条理。
+
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
