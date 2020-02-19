@@ -166,7 +166,8 @@ Namyong Park, Andrey Kan, Xin Luna Dong, Tong Zhao, and Christos Faloutsos. 2019
 Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu, and Tat-Seng Chua. 2019. KGAT: Knowledge Graph Attention Network for Recommendation. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 950–958. DOI:https://doi.org/10.1145/3292500.3330989
 + 利用知识图谱辅助推荐。知识图谱中的高阶特征对推荐有很大帮助，比如两个item和同一个entity有不同性质的关联。作者提出的模型首先使用Embedding层来计算Embedding，该层使用了知识图谱中常用的TransR方法；再使用attention层，这一层是自网络和邻居影响的结合，作者使用了3种结合的方法并在实验部分对比；最终的loss是这两层的loss之和。在实验部分，提出并回答了3个问题：与baseline对比，自身各部分的性能（对各部分替换不同的方法，对性能进行对比），可解释性（case study），使文章更有条理。
 
-Songgaojun Deng, Huzefa Rangwala, and Yue Ning. 2019. Learning Dynamic Context Graphs for Predicting Social Events. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1007–1016. DOI:https://doi.org/10.1145/3292500.3330919
+Xiao Zhou, Cecilia Mascolo, and Zhongxiang Zhao. 2019. Topic-Enhanced Memory Networks for Personalised Point-of-Interest Recommendation. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 3018–3028. DOI:https://doi.org/10.1145/3292500.3330781
++ POI推荐，考虑了时序特征和地理特征，使用memory network来建模check-in数据（使用了attention），TLDA模型来刻画check-in序列的时序特征；为了描述地理特征，作者使用了用户位置影响、POI位置影响和距离影响三个变量。实验部分使用了attention的结果来对比不同模式。
 
 
 
