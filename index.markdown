@@ -169,7 +169,8 @@ Xiang Wang, Xiangnan He, Yixin Cao, Meng Liu, and Tat-Seng Chua. 2019. KGAT: Kno
 Xiao Zhou, Cecilia Mascolo, and Zhongxiang Zhao. 2019. Topic-Enhanced Memory Networks for Personalised Point-of-Interest Recommendation. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 3018–3028. DOI:https://doi.org/10.1145/3292500.3330781
 + POI推荐，考虑了时序特征和地理特征，使用memory network来建模check-in数据（使用了attention），TLDA模型来刻画check-in序列的时序特征；为了描述地理特征，作者使用了用户位置影响、POI位置影响和距离影响三个变量。实验部分使用了attention的结果来对比不同模式。
 
-
+Songgaojun Deng, Huzefa Rangwala, and Yue Ning. 2019. Learning Dynamic Context Graphs for Predicting Social Events. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1007–1016. DOI:https://doi.org/10.1145/3292500.3330919
++ 预测新闻事件，实际是一篇NLP的论文，通过分析新闻的文本来预测事件，提出了动态的GCN模型，作者筛选一些重要单词作为点，出现的文章频率作为边，构建图，因为每天的新闻是不同的，所以图每天都是变化的，利用动态GCN模型和时间特征来预测未来事件，baseline除了LR只有一种之前的事件预测模型，此外还使用了一些提出的模型的变体，除了对预测性能做对比，还给出了一些case study和图的可视化。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
