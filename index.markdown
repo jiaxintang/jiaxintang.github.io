@@ -199,3 +199,9 @@ Machine Learning for Networking: Workflow, Advances and Opportunities
 	+ 性能预测：监督学习，HMM
 	+ 配置推断：监督学习
 + 可行性问题：对延时敏感，数据量、标注数据
+
+Dong M, Li Q, Zarchy D, et al. {PCC}: Re-architecting congestion control for consistent high performance[C]//12th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 15). 2015: 395-408.
++ TCP会根据丢包来降低发送速度，在很多情况下丢包并不是因为拥塞，作者提出在发送端尝试增加和降低发送速率，一个RTT后根据utility function来决定是否按此高速率还是低速率发送，严格来说并不是RL，因为只关注了现在的utility，没有考虑影响，但是好处是不需要训练，可以直接使用，作者证明了其公平性（多发送端速率最终会趋于一致）和收敛性，同时作者通过实验证明了该方法可以是TCP友好的，可以在同一网络中一起使用。
+
+	+ 资源配置：强化学习发送
+	+ 资源配置：强化学习
