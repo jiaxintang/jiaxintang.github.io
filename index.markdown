@@ -202,3 +202,6 @@ Machine Learning for Networking: Workflow, Advances and Opportunities
 
 Dong M, Li Q, Zarchy D, et al. {PCC}: Re-architecting congestion control for consistent high performance[C]//12th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 15). 2015: 395-408.
 + TCP会根据丢包来降低发送速度，在很多情况下丢包并不是因为拥塞，作者提出在发送端尝试增加和降低发送速率，一个RTT后根据utility function来决定是否按此高速率还是低速率发送，严格来说并不是RL，因为只关注了现在的utility，没有考虑影响，但是好处是不需要训练，可以直接使用，作者证明了其公平性（多发送端速率最终会趋于一致）和收敛性，同时作者通过实验证明了该方法可以是TCP友好的，可以在同一网络中一起使用。
+
+Hongzi Mao, Malte Schwarzkopf, Shaileshh Bojja Venkatakrishnan, Zili Meng, and Mohammad Alizadeh. 2019. Learning scheduling algorithms for data processing clusters. In Proceedings of the ACM Special Interest Group on Data Communication (SIGCOMM ’19). Association for Computing Machinery, New York, NY, USA, 270–288. DOI:https://doi.org/10.1145/3341302.3342080
++ 使用GNN和PG来实现任务调度，使用GNN来获取DAG的各个点和每个DAG的Embedding，文中的两个技巧是：初期策略效果很差，所以前一些epoch可以提早结束；考虑到job到来的随机性，作者对同一组实验进行N次，取N次的平均值作为baseline（疑问：因为使用了PG，所以随机性较大，但是如果随机性不够，这N次的结果应该是一样的？）
