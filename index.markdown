@@ -205,3 +205,6 @@ Dong M, Li Q, Zarchy D, et al. {PCC}: Re-architecting congestion control for con
 
 Hongzi Mao, Malte Schwarzkopf, Shaileshh Bojja Venkatakrishnan, Zili Meng, and Mohammad Alizadeh. 2019. Learning scheduling algorithms for data processing clusters. In Proceedings of the ACM Special Interest Group on Data Communication (SIGCOMM ’19). Association for Computing Machinery, New York, NY, USA, 270–288. DOI:https://doi.org/10.1145/3341302.3342080
 + 使用GNN和PG来实现任务调度，使用GNN来获取DAG的各个点和每个DAG的Embedding，文中的两个技巧是：初期策略效果很差，所以前一些epoch可以提早结束；考虑到job到来的随机性，作者对同一组实验进行N次，取N次的平均值作为baseline（疑问：因为使用了PG，所以随机性较大，但是如果随机性不够，这N次的结果应该是一样的？）
+
+Hongzi Mao, Mohammad Alizadeh, Ishai Menache, and Srikanth Kandula. 2016. Resource Management with Deep Reinforcement Learning. In Proceedings of the 15th ACM Workshop on Hot Topics in Networks (HotNets ’16). Association for Computing Machinery, New York, NY, USA, 50–56. DOI:https://doi.org/10.1145/3005745.3005750
++ 使用PG来实现任务调度，是上一篇的一个简化版，只考虑简单的资源分配，即每个任务到达时可知其需要的各项资源的多少，然后根据现有资源对安排执行那些任务，state为现有资源分配情况，已到达等待执行的每个任务需要的资源，action为之后一段timestep运行那些任务，reward为平均等待时间。baseline和上一篇论文一样，都是N次实验，每个时间t取平均作为baseline
