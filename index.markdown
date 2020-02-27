@@ -209,3 +209,7 @@ Hongzi Mao, Malte Schwarzkopf, Shaileshh Bojja Venkatakrishnan, Zili Meng, and M
 Hongzi Mao, Mohammad Alizadeh, Ishai Menache, and Srikanth Kandula. 2016. Resource Management with Deep Reinforcement Learning. In Proceedings of the 15th ACM Workshop on Hot Topics in Networks (HotNets ’16). Association for Computing Machinery, New York, NY, USA, 50–56. DOI:https://doi.org/10.1145/3005745.3005750
 + 使用PG来实现任务调度，是上一篇的一个简化版，只考虑简单的资源分配，即每个任务到达时可知其需要的各项资源的多少，然后根据现有资源对安排执行那些任务，state为现有资源分配情况，已到达等待执行的每个任务需要的资源，action为之后一段timestep运行那些任务，reward为平均等待时间。baseline和上一篇论文一样，都是N次实验，每个时间t取平均作为baseline。
 作者总结的挑战：1、系统复杂，很难建模；2、实际环境下的噪音；3、评价指标难以优化
+
+Hongzi Mao, Ravi Netravali, and Mohammad Alizadeh. 2017. Neural Adaptive Video Streaming with Pensieve. In Proceedings of the Conference of the ACM Special Interest Group on Data Communication (SIGCOMM ’17). Association for Computing Machinery, New York, NY, USA, 197–210. DOI:https://doi.org/10.1145/3098822.3098843
++ 视频的比特率确定，使用了A3C的方法，作者说明了传统方法的局限性：固定策略不能考虑网络吞吐量的变化（预测不准）、视频QoE的要求矛盾（高比特率，最小化再缓冲）、比特率决策的级联效应、ABR决策的粗粒度，并通过具体的例子证明了这些缺陷。作者设计了模拟器来使得不用使用真实环境训练，节省了时间，并且实际训练时
+使用了多个模拟器并行，A3C中使用critic网络来预测q值（qoe方程具体实验时尝试了多种不同的设计），advantage来衡量与平均reward的差，同时使用entropy来使得在训练初期尽可能尝试不同的action。
