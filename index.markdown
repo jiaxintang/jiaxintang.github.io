@@ -212,4 +212,4 @@ Hongzi Mao, Mohammad Alizadeh, Ishai Menache, and Srikanth Kandula. 2016. Resour
 
 Hongzi Mao, Ravi Netravali, and Mohammad Alizadeh. 2017. Neural Adaptive Video Streaming with Pensieve. In Proceedings of the Conference of the ACM Special Interest Group on Data Communication (SIGCOMM ’17). Association for Computing Machinery, New York, NY, USA, 197–210. DOI:https://doi.org/10.1145/3098822.3098843
 + 视频的比特率确定，使用了A3C的方法，作者说明了传统方法的局限性：固定策略不能考虑网络吞吐量的变化（预测不准）、视频QoE的要求矛盾（高比特率，最小化再缓冲）、比特率决策的级联效应、ABR决策的粗粒度，并通过具体的例子证明了这些缺陷。作者设计了模拟器来使得不用使用真实环境训练，节省了时间，并且实际训练时
-使用了多个模拟器并行，A3C中使用critic网络来预测q值（qoe方程具体实验时尝试了多种不同的设计），advantage来衡量与平均reward的差，同时使用entropy来使得在训练初期尽可能尝试不同的action。
+使用了多个模拟器并行，A3C中使用critic网络来预测q值（qoe方程具体实验时尝试了多种不同的设计），advantage来衡量与平均reward的差，同时使用entropy来使得在训练初期尽可能尝试不同的action。评价比较了不同的baseline，不同的rl算法，以及在实际环境下的效果来评价模型是否具有generalization。
