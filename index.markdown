@@ -172,6 +172,36 @@ Xiao Zhou, Cecilia Mascolo, and Zhongxiang Zhao. 2019. Topic-Enhanced Memory Net
 Songgaojun Deng, Huzefa Rangwala, and Yue Ning. 2019. Learning Dynamic Context Graphs for Predicting Social Events. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1007–1016. DOI:https://doi.org/10.1145/3292500.3330919
 + 预测新闻事件，实际是一篇NLP的论文，通过分析新闻的文本来预测事件，提出了动态的GCN模型，作者筛选一些重要单词作为点，出现的文章频率作为边，构建图，因为每天的新闻是不同的，所以图每天都是变化的，利用动态GCN模型和时间特征来预测未来事件，baseline除了LR只有一种之前的事件预测模型，此外还使用了一些提出的模型的变体，除了对预测性能做对比，还给出了一些case study和图的可视化。
 
+Drakonakis K, Ilia P, Ioannidis S, et al. Please Forget Where I Was Last Summer: The Privacy Risks of Public Location (Meta) Data[J].NDSS 2019
++ The paper proposed LPAuditor which conducts a comprehensive evaluation of the privacy loss caused by public location metadata. 
++ Data Collection and Pre-processing
+	+ Data Collection: Twitter's stream API for collecting tweets
+	+ Dataset: users (the mainland area of USA) with at least one tweet containing GPS coordinates, 87114 users, 15263317 tweets
+	+ Ground Truth: manual process, 2047 users
+	+ Data Labeling: GPS coordinates to Postal address (reverse geocoding API by ArcGIS, Google Maps Geocoding API)
+		Initial clustering: Tweets with the same postal address are grouped into a single clustering
+		Second-level clustering: Using DBSCAN to group neighboring clusters into a larger one
+		Clustering results: power law distribution
++ Identifying Key User Locations
+	+ heuristics
+	+ Home
+		the cluster with the broadest time frame in the five most active clusters
+		Evaluation: Outperform previous approaches
+	+ Work
+		the cluster with the largest number of active tweets in the dominant time frame
+		Evaluation: Not very effective (Possible reason: The user can exhibit similar characteristics in other locations.)
+	+ Selection bias(Ground truth):
+		They selected 100 users randomly from the dataset and manually investigate their tweets.
++ Identifying Highly-Sensitive Places	(health/religion/sex)
+	+ Foursquare API returns the name of each venue as well as its type.
+	+ Content-based corroboration
+		manually-curated wordlist
+	+ Duration-based corroboration
+		consecutive tweets in the span of a few hours
++ Impact of Historical Data
+	+ A bug of Twitter before April 2015: The tweets with coarse-grained labels have coordinates in their metadata.
+	+ Historical data lead to unavoidable privacy leakage.
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
@@ -213,3 +243,5 @@ Hongzi Mao, Mohammad Alizadeh, Ishai Menache, and Srikanth Kandula. 2016. Resour
 Hongzi Mao, Ravi Netravali, and Mohammad Alizadeh. 2017. Neural Adaptive Video Streaming with Pensieve. In Proceedings of the Conference of the ACM Special Interest Group on Data Communication (SIGCOMM ’17). Association for Computing Machinery, New York, NY, USA, 197–210. DOI:https://doi.org/10.1145/3098822.3098843
 + 视频的比特率确定，使用了A3C的方法，作者说明了传统方法的局限性：固定策略不能考虑网络吞吐量的变化（预测不准）、视频QoE的要求矛盾（高比特率，最小化再缓冲）、比特率决策的级联效应、ABR决策的粗粒度，并通过具体的例子证明了这些缺陷。作者设计了模拟器来使得不用使用真实环境训练，节省了时间，并且实际训练时
 使用了多个模拟器并行，A3C中使用critic网络来预测q值（qoe方程具体实验时尝试了多种不同的设计），advantage来衡量与平均reward的差，同时使用entropy来使得在训练初期尽可能尝试不同的action。评价比较了不同的baseline，不同的rl算法，以及在实际环境下的效果来评价模型是否具有generalization。
+
+
