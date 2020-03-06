@@ -208,6 +208,9 @@ Drakonakis K, Ilia P, Ioannidis S, et al. Please Forget Where I Was Last Summer:
 Guolin Ke, Zhenhui Xu, Jia Zhang, Jiang Bian, and Tie-Yan Liu. 2019. DeepGBM: A Deep Learning Framework Distilled by GBDT for Online Prediction Tasks. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 384–394. DOI:https://doi.org/10.1145/3292500.3330858
 + online预测，方法是将GBDT与NN结合，也就是用NN来模拟GBDT的树结构。GBDT的优势在于处理高密度的数值特征，但是对于新增的数据需要重新训练模型树，效率很低；NN的优势是处理比较稀疏的类别特征，同时可以做增量的训练。作者使用NN来模拟树的操作，即模拟决策树的特征，对于处理多颗树的问题，使用了分组和leaf embedding的做法提高效率。训练时，leaf embedding是利用离线模型先训练的，之后就是end-to-end的模型，增量训练时只使用了end-to-end的loss。模型评价使用了多个常用数据库来测试分类和回归，并与一些现有的预测方法做对比，分为offline和online部分，实验证明提出的模型收敛速度快，准确性高。
 
+Hulsebos M, Hu K, Bakker M, et al. Sherlock: A deep learning approach to semantic data type detection[C]//Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 2019: 1500-1508.
++ 对列数据进行语义分类，这篇文章看起来中规中矩，模型很简单，就是简单的全连接层，特征提取也很简单，字符、单词、句子、全局四个层面，对比的baseline就是基本的ml模型、正则表达式和字典方法，文章结构清晰，数据获取、特征提取、模型介绍、评价（与baseline对比，特征重要性分析等），看起来没什么亮点，但是每一部分表达都比较清晰，之前也的确没有人用deep learning来解决该问题。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
