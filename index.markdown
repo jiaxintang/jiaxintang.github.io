@@ -211,6 +211,9 @@ Guolin Ke, Zhenhui Xu, Jia Zhang, Jiang Bian, and Tie-Yan Liu. 2019. DeepGBM: A 
 Hulsebos M, Hu K, Bakker M, et al. Sherlock: A deep learning approach to semantic data type detection[C]//Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 2019: 1500-1508.
 + 对列数据进行语义分类，这篇文章看起来中规中矩，模型很简单，就是简单的全连接层，特征提取也很简单，字符、单词、句子、全局四个层面，对比的baseline就是基本的ml模型、正则表达式和字典方法，文章结构清晰，数据获取、特征提取、模型介绍、评价（与baseline对比，特征重要性分析等），看起来没什么亮点，但是每一部分表达都比较清晰，之前也的确没有人用deep learning来解决该问题。
 
+Xin Wang, Wenwu Zhu, and Chenghao Liu. 2019. Social Recommendation with Optimal Limited Attention. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1518–1527. DOI:https://doi.org/10.1145/3292500.3330939
++ 社交推荐，作者引入了社会科学中有限注意的问题，认为只有一部分的朋友会影响用户行为，且这一部分的朋友对用户的影响也是不同的，但是作者没有直接使用神经网络中的attention模型，而是引入了权重后，结合MF对整个优化问题进行了严格的数学推导和证明，并使用EM的思想来做优化，与之前KDD上见到的文章不同，这篇论文非常理论，文章的亮点是严格的数学功底，评论部分使用了多种评论指标证明优越性，同时考虑到了冷启动问题。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
