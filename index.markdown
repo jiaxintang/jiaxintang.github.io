@@ -214,6 +214,9 @@ Hulsebos M, Hu K, Bakker M, et al. Sherlock: A deep learning approach to semanti
 Xin Wang, Wenwu Zhu, and Chenghao Liu. 2019. Social Recommendation with Optimal Limited Attention. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1518–1527. DOI:https://doi.org/10.1145/3292500.3330939
 + 社交推荐，作者引入了社会科学中有限注意的问题，认为只有一部分的朋友会影响用户行为，且这一部分的朋友对用户的影响也是不同的，但是作者没有直接使用神经网络中的attention模型，而是引入了权重后，结合MF对整个优化问题进行了严格的数学推导和证明，并使用EM的思想来做优化，与之前KDD上见到的文章不同，这篇论文非常理论，文章的亮点是严格的数学功底，评论部分使用了多种评论指标证明优越性，同时考虑到了冷启动问题。
 
+Hanwen Zha, Wenhu Chen, Keqian Li, and Xifeng Yan. 2019. Mining Algorithm Roadmap in Scientific Publications. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1083–1092. DOI:https://doi.org/10.1145/3292500.3330913
++ 使用NLP的方法来整理论文，绘制算法的演化图，作者使用正则表达式的方法从论文中提取简称（如CNN、GAN）来代表算法，使用PCNN、Transformer和BERT来提取论文中不同简称之间的关系，这里的关系主要是比较关系，为了获取训练数据，作者认为在表格中的一列或一行算法可以认为是具有比较关系的，最终确定演化关系时，作者认为发表年份和出现频率可以用来确定演化边的方向。因为不同领域的简称可能有重复，作者还同时训练了实体类别。在评价时，数据集爬取了NeurIPS、ACL和VLDB的论文数据，数量既都为几k篇论文，因为问题比较新颖，比较时使用了一些简单的方法，如Word similarity等，同时也与自身模型变体做了比较，还分析了case study。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
