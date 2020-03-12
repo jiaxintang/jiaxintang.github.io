@@ -217,6 +217,9 @@ Xin Wang, Wenwu Zhu, and Chenghao Liu. 2019. Social Recommendation with Optimal 
 Hanwen Zha, Wenhu Chen, Keqian Li, and Xifeng Yan. 2019. Mining Algorithm Roadmap in Scientific Publications. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1083–1092. DOI:https://doi.org/10.1145/3292500.3330913
 + 使用NLP的方法来整理论文，绘制算法的演化图，作者使用正则表达式的方法从论文中提取简称（如CNN、GAN）来代表算法，使用PCNN、Transformer和BERT来提取论文中不同简称之间的关系，这里的关系主要是比较关系，为了获取训练数据，作者认为在表格中的一列或一行算法可以认为是具有比较关系的，最终确定演化关系时，作者认为发表年份和出现频率可以用来确定演化边的方向。因为不同领域的简称可能有重复，作者还同时训练了实体类别。在评价时，数据集爬取了NeurIPS、ACL和VLDB的论文数据，数量既都为几k篇论文，因为问题比较新颖，比较时使用了一些简单的方法，如Word similarity等，同时也与自身模型变体做了比较，还分析了case study。
 
+Quanyu Dai, Xiao Shen, Liang Zhang, Qiang Li, and Dan Wang. 2019. Adversarial Training Methods for Network Embedding. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 329–339. DOI:https://doi.org/10.1145/3308558.3313445
++ 使用GAN来优化node embedding，论文以DeepWalk为例，使用GAN来训练正则化项，避免过拟合，根据作者所言固定的正则化项是不合理的，使用GAN做这种优化已经被证明很有效，他将其运用在了DeepWalk上，其中基于random walk的sampling和negative sampling都不变，只是增加了使用adv正则化项，同时两点的similarity越大，该项越小。在这种方法的基础上，作者还提出了可解释性更强的优化模型，即adv正则化只当做稀疏，同时使用另一个点作为方向，使得该项具有可解释性。实验部分与现有的node embedding方法做了比较，在训练过程中效果一直非常好，且对超参数不敏感。该优化还可以运用于除了Deepwalk以外的其他方法上，如LINE。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
