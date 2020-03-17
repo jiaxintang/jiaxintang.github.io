@@ -221,7 +221,7 @@ Quanyu Dai, Xiao Shen, Liang Zhang, Qiang Li, and Dan Wang. 2019. Adversarial Tr
 + 使用GAN来优化node embedding，论文以DeepWalk为例，使用GAN来训练正则化项，避免过拟合，根据作者所言固定的正则化项是不合理的，使用GAN做这种优化已经被证明很有效，他将其运用在了DeepWalk上，其中基于random walk的sampling和negative sampling都不变，只是增加了使用adv正则化项，同时两点的similarity越大，该项越小。在这种方法的基础上，作者还提出了可解释性更强的优化模型，即adv正则化只当做稀疏，同时使用另一个点作为方向，使得该项具有可解释性。实验部分与现有的node embedding方法做了比较，在训练过程中效果一直非常好，且对超参数不敏感。该优化还可以运用于除了Deepwalk以外的其他方法上，如LINE。
 
 Min-hwan Oh and Garud Iyengar. 2019. Sequential Anomaly Detection using Inverse Reinforcement Learning. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1480–1490. DOI:https://doi.org/10.1145/3292500.3330932
-+ 根据序列数据进行异常检测，使用了逆向强化学习（IRL），即没有给定的Reward方程，而是试图找出符合最优策略demonstration行为的Reward方程（一个神经网络）。最大熵IRL：demonstrations服从Boltzmann分布，demonstrator的偏好呈指数偏向高reward的轨迹，最终的目标是最大化给定轨迹的可能性。Bayesian框架，Reward有一个先验分布，。。。。
++ 根据序列数据进行异常检测，使用了逆向强化学习（IRL），即没有给定的Reward方程，而是试图找出符合最优策略demonstration行为的Reward方程（一个神经网络）。最大熵IRL：demonstrations服从Boltzmann分布，demonstrator的偏好呈指数偏向高reward的轨迹，最终的目标是最大化给定轨迹的可能性。Bayesian框架，Reward有一个先验分布，根据demonstration计算后验分布。这篇论文模型非常复杂，但是基本是使用了已有的东西，但是第一次运用在异常检测上，且效果很好。实验部分进行了可视化，对比的baseline是很简单的机器学习。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
