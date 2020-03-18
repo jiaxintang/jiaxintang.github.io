@@ -223,6 +223,9 @@ Quanyu Dai, Xiao Shen, Liang Zhang, Qiang Li, and Dan Wang. 2019. Adversarial Tr
 Min-hwan Oh and Garud Iyengar. 2019. Sequential Anomaly Detection using Inverse Reinforcement Learning. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1480–1490. DOI:https://doi.org/10.1145/3292500.3330932
 + 根据序列数据进行异常检测，使用了逆向强化学习（IRL），即没有给定的Reward方程，而是试图找出符合最优策略demonstration行为的Reward方程（一个神经网络）。最大熵IRL：demonstrations服从Boltzmann分布，demonstrator的偏好呈指数偏向高reward的轨迹，最终的目标是最大化给定轨迹的可能性。Bayesian框架，Reward有一个先验分布，根据demonstration计算后验分布。这篇论文模型非常复杂，但是基本是使用了已有的东西，但是第一次运用在异常检测上，且效果很好。实验部分进行了可视化，对比的baseline是很简单的机器学习。
 
+Zheyi Pan, Yuxuan Liang, Weifeng Wang, Yong Yu, Yu Zheng, and Junbo Zhang. 2019. Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1720–1730. DOI:https://doi.org/10.1145/3292500.3330884
++ 交通预测，作者认为目前交通预测的挑战在于时间和空间的复杂联系，作者首先使用RNN（GRU）来提取各个点各个时间的时序特征（encoder），接着FCN来学习点和边的特征（NMK和EMK），输入进GAT获取不同边的weight同时获得点的embedding，最终使用RNN来结合NMK和点embedding来获得最终的预测结果（decoder）。实验部分预测了taxi的流和速度，在baseline中既有state-of-the-art的DCRNN，也有算法变体GAT-Seq2Seq，同时做了参数敏感性测试。这篇论文的内容比较简单，设计的模型也是多种已有模型的拼接，但是每一部分的用途、计算就写得很详细，实验部分比较也很清晰。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
