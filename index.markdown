@@ -226,6 +226,9 @@ Min-hwan Oh and Garud Iyengar. 2019. Sequential Anomaly Detection using Inverse 
 Zheyi Pan, Yuxuan Liang, Weifeng Wang, Yong Yu, Yu Zheng, and Junbo Zhang. 2019. Urban Traffic Prediction from Spatio-Temporal Data Using Deep Meta Learning. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1720–1730. DOI:https://doi.org/10.1145/3292500.3330884
 + 交通预测，作者认为目前交通预测的挑战在于时间和空间的复杂联系，作者首先使用RNN（GRU）来提取各个点各个时间的时序特征（encoder），接着FCN来学习点和边的特征（NMK和EMK），输入进GAT获取不同边的weight同时获得点的embedding，最终使用RNN来结合NMK和点embedding来获得最终的预测结果（decoder）。实验部分预测了taxi的流和速度，在baseline中既有state-of-the-art的DCRNN，也有算法变体GAT-Seq2Seq，同时做了参数敏感性测试。这篇论文的内容比较简单，设计的模型也是多种已有模型的拼接，但是每一部分的用途、计算就写得很详细，实验部分比较也很清晰。
 
+Alessandro Epasto and Bryan Perozzi. 2019. Is a Single Embedding Enough? Learning Node Representations that Capture Multiple Social Contexts. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 394–404. DOI:https://doi.org/10.1145/3308558.3313660
++ node embedding，作者认为如果把一个点对应到一个embedding不能反映点的全部信息，他认为基于不同角色，一个点应当对应于多个embedding；因为他们引入了重叠聚类，即一个点属于多个集合，在每个集合中都有一个embedding，作者对已有的Persona Decomposition重叠聚类方法提出了改进，但是没有对具体的embedding方法改进。在应用方面，分别作了link prediction和可视化，其中可视化这一应用给了读者更直观的感受，也是之前node embedding中不常见的。这篇论文的亮点就在于idea很新，对重叠分类和node embedding进行结合，其方法和实验并不难。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
