@@ -229,6 +229,9 @@ Zheyi Pan, Yuxuan Liang, Weifeng Wang, Yong Yu, Yu Zheng, and Junbo Zhang. 2019.
 Alessandro Epasto and Bryan Perozzi. 2019. Is a Single Embedding Enough? Learning Node Representations that Capture Multiple Social Contexts. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 394–404. DOI:https://doi.org/10.1145/3308558.3313660
 + node embedding，作者认为如果把一个点对应到一个embedding不能反映点的全部信息，他认为基于不同角色，一个点应当对应于多个embedding；因为他们引入了重叠聚类，即一个点属于多个集合，在每个集合中都有一个embedding，作者对已有的Persona Decomposition重叠聚类方法提出了改进，但是没有对具体的embedding方法改进。在应用方面，分别作了link prediction和可视化，其中可视化这一应用给了读者更直观的感受，也是之前node embedding中不常见的。这篇论文的亮点就在于idea很新，对重叠分类和node embedding进行结合，其方法和实验并不难。
 
+Chao Huang, Chuxu Zhang, Jiashu Zhao, Xian Wu, Dawei Yin, and Nitesh Chawla. 2019. MiST: A Multiview and Multimodal Spatial-Temporal Learning Framework for Citywide Abnormal Event Forecasting. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 717–728. DOI:https://doi.org/10.1145/3308558.3313730
++ 预测城市异常事件，作者首先分析了挑战，包括区域内部的时间特征、区域之间的空间特征以及其他影响因素，模型分为三部分，RNN提取区域内部特征，attention结合不同的区域特征，最后RNN来总结最终结果。这篇文章很值得我借鉴，因为就模型本身来说，并不新颖，但是作者的介绍非常详细，而且在介绍模型时由于融入了一些与应用场景相结合的概念，因此不显得是完全套用已有模型。在评价部分，根据提出的问题，分析与baselines的性能对比，已经component-wise的性能，对超参数也进行了分析，简单的介绍了一个case study。baseline挑选的比较多，但很多也原本也不是用来解决该问题的，只是也是处理时空特征。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
