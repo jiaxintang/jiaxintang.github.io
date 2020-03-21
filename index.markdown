@@ -232,6 +232,9 @@ Alessandro Epasto and Bryan Perozzi. 2019. Is a Single Embedding Enough? Learnin
 Chao Huang, Chuxu Zhang, Jiashu Zhao, Xian Wu, Dawei Yin, and Nitesh Chawla. 2019. MiST: A Multiview and Multimodal Spatial-Temporal Learning Framework for Citywide Abnormal Event Forecasting. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 717–728. DOI:https://doi.org/10.1145/3308558.3313730
 + 预测城市异常事件，作者首先分析了挑战，包括区域内部的时间特征、区域之间的空间特征以及其他影响因素，模型分为三部分，RNN提取区域内部特征，attention结合不同的区域特征，最后RNN来总结最终结果。这篇文章很值得我借鉴，因为就模型本身来说，并不新颖，但是作者的介绍非常详细，而且在介绍模型时由于融入了一些与应用场景相结合的概念，因此不显得是完全套用已有模型。在评价部分，根据提出的问题，分析与baselines的性能对比，已经component-wise的性能，对超参数也进行了分析，简单的介绍了一个case study。baseline挑选的比较多，但很多也原本也不是用来解决该问题的，只是也是处理时空特征。
 
+Jie Feng, Mingyang Zhang, Huandong Wang, Zeyu Yang, Chao Zhang, Yong Li, and Depeng Jin. 2019. DPLink: User Identity Linkage via Deep Neural Network From Heterogeneous Mobility Data. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 459–469. DOI:https://doi.org/10.1145/3308558.3313424
++ 不同数据集中的用户对齐， 针对的是基于位置的应用，数据集是ISP和Foursquare-twitter，两者的质量不同，前者较高，作者先通过RNN提取轨迹特征和位置特征，通过attention来选择两个轨迹之间重要的部分，最终通过FC分类，模型本身比较简单，但是效果并不好，作者认为是由于数据质量的问题，即两个数据集差距较大，因此作者引入了transfer learning的概念，先预训练一个任务，即同一个数据集中，不同时间的两个轨迹是否属于同一个用户，这样数据质量比较一致，效果也较好，再使用部分训练好的参数来完成最终的任务。这篇文章的另一个优点是图片很清晰漂亮。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
