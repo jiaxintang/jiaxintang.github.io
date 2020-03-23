@@ -235,6 +235,9 @@ Chao Huang, Chuxu Zhang, Jiashu Zhao, Xian Wu, Dawei Yin, and Nitesh Chawla. 201
 Jie Feng, Mingyang Zhang, Huandong Wang, Zeyu Yang, Chao Zhang, Yong Li, and Depeng Jin. 2019. DPLink: User Identity Linkage via Deep Neural Network From Heterogeneous Mobility Data. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 459–469. DOI:https://doi.org/10.1145/3308558.3313424
 + 不同数据集中的用户对齐， 针对的是基于位置的应用，数据集是ISP和Foursquare-twitter，两者的质量不同，前者较高，作者先通过RNN提取轨迹特征和位置特征，通过attention来选择两个轨迹之间重要的部分，最终通过FC分类，模型本身比较简单，但是效果并不好，作者认为是由于数据质量的问题，即两个数据集差距较大，因此作者引入了transfer learning的概念，先预训练一个任务，即同一个数据集中，不同时间的两个轨迹是否属于同一个用户，这样数据质量比较一致，效果也较好，再使用部分训练好的参数来完成最终的任务。这篇文章的另一个优点是图片很清晰漂亮。
 
+Kang-Min Kim, Yeachan Kim, Jungho Lee, Ji-Min Lee, and SangKeun Lee. 2019. From Small-scale to Large-scale Text Classification. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 853–862. DOI:https://doi.org/10.1145/3308558.3313563
++ NLP，文本分类，由于做大规模分类时，类别较多，每一类的数据量不足也不均匀，因此作者提出了多任务的模型，即同时进行小规模和大规模的分类，作者使用了Text-CNN模型，CNN输出两种层，一种是私有特征，一种是公有特征，其中小规模任务由其私有特征和公有特征决定，大规模任务由其私有特征和公有特征、以及经过了一个gate的小规模任务的私有特征决定。一些可以参考的细节：pre-training的四种方法、zero-padding、over-sampling（对不均匀数据重复取样）
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
