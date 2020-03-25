@@ -238,6 +238,9 @@ Jie Feng, Mingyang Zhang, Huandong Wang, Zeyu Yang, Chao Zhang, Yong Li, and Dep
 Kang-Min Kim, Yeachan Kim, Jungho Lee, Ji-Min Lee, and SangKeun Lee. 2019. From Small-scale to Large-scale Text Classification. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 853–862. DOI:https://doi.org/10.1145/3308558.3313563
 + NLP，文本分类，由于做大规模分类时，类别较多，每一类的数据量不足也不均匀，因此作者提出了多任务的模型，即同时进行小规模和大规模的分类，作者使用了Text-CNN模型，CNN输出两种层，一种是私有特征，一种是公有特征，其中小规模任务由其私有特征和公有特征决定，大规模任务由其私有特征和公有特征、以及经过了一个gate的小规模任务的私有特征决定。一些可以参考的细节：pre-training的四种方法、zero-padding、over-sampling（对不均匀数据重复取样）
 
+Desheng Hu, Shan Jiang, Ronald E. Robertson, and Christo Wilson. 2019. Auditing the Partisanship of Google Search Snippets. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 693–704. DOI:https://doi.org/10.1145/3308558.3313654
++ 分析google搜索索引简介的政治倾向，发现有扩大政治倾向的现象，作者认为这样的现象不是故意的。文章使用了一些简单的NLP方法，首先从一些演讲中提取政治词汇，结果计算索引和原文的政治倾向分数。文章以分析为主，并没有提出算法，分析分类非常清晰，如位置、派系、主题等。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
