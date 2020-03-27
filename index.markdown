@@ -241,6 +241,9 @@ Kang-Min Kim, Yeachan Kim, Jungho Lee, Ji-Min Lee, and SangKeun Lee. 2019. From 
 Desheng Hu, Shan Jiang, Ronald E. Robertson, and Christo Wilson. 2019. Auditing the Partisanship of Google Search Snippets. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 693–704. DOI:https://doi.org/10.1145/3308558.3313654
 + 分析google搜索索引简介的政治倾向，发现有扩大政治倾向的现象，作者认为这样的现象不是故意的。文章使用了一些简单的NLP方法，首先从一些演讲中提取政治词汇，结果计算索引和原文的政治倾向分数。文章以分析为主，并没有提出算法，分析分类非常清晰，如位置、派系、主题等。
 
+Citation Needed: A Taxonomy and Algorithmic Assessment of Wikipedia’s Verifiability
++ 这篇文章很值得借鉴，它提出了wikipedia上的引用问题，以及引用原因，文章花了很大笔墨介绍数据标注过程，分为expert和non-expert两部分，作者详细介绍了为什么要分两类人标注，这样做的可行性，两类人标注结果是否有相似性，另一方面，作者也提出了NN模型来预测是否需要引用，模型很简单，对比的baseline是手动提取特征的模型。文章有很多的可视化。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
