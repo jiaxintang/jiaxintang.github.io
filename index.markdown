@@ -241,8 +241,11 @@ Kang-Min Kim, Yeachan Kim, Jungho Lee, Ji-Min Lee, and SangKeun Lee. 2019. From 
 Desheng Hu, Shan Jiang, Ronald E. Robertson, and Christo Wilson. 2019. Auditing the Partisanship of Google Search Snippets. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 693–704. DOI:https://doi.org/10.1145/3308558.3313654
 + 分析google搜索索引简介的政治倾向，发现有扩大政治倾向的现象，作者认为这样的现象不是故意的。文章使用了一些简单的NLP方法，首先从一些演讲中提取政治词汇，结果计算索引和原文的政治倾向分数。文章以分析为主，并没有提出算法，分析分类非常清晰，如位置、派系、主题等。
 
-Citation Needed: A Taxonomy and Algorithmic Assessment of Wikipedia’s Verifiability
+Citation Needed: A Taxonomy and Algorithmic Assessment of Wikipedia’s Verifiability, www19
 + 这篇文章很值得借鉴，它提出了wikipedia上的引用问题，以及引用原因，文章花了很大笔墨介绍数据标注过程，分为expert和non-expert两部分，作者详细介绍了为什么要分两类人标注，这样做的可行性，两类人标注结果是否有相似性，另一方面，作者也提出了NN模型来预测是否需要引用，模型很简单，对比的baseline是手动提取特征的模型。文章有很多的可视化。
+
+Estimating the Total Volume of Queries to Google, www19
++ 估计Google的查询量，纯数学的论文，作者认为查询符合zipf分布，论文主要介绍怎样使用采样方法估计该分布的各个参数，使用了Google Trend获得查询数据，以一类查询为例概括了计算方法。（这篇论文有点复杂分两天阅读）
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
