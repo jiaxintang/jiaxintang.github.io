@@ -245,7 +245,7 @@ Citation Needed: A Taxonomy and Algorithmic Assessment of Wikipedia’s Verifiab
 + 这篇文章很值得借鉴，它提出了wikipedia上的引用问题，以及引用原因，文章花了很大笔墨介绍数据标注过程，分为expert和non-expert两部分，作者详细介绍了为什么要分两类人标注，这样做的可行性，两类人标注结果是否有相似性，另一方面，作者也提出了NN模型来预测是否需要引用，模型很简单，对比的baseline是手动提取特征的模型。文章有很多的可视化。
 
 Estimating the Total Volume of Queries to Google, www19
-+ 估计Google的查询量，纯数学的论文，作者认为查询符合zipf分布，论文主要介绍怎样使用采样方法估计该分布的各个参数，使用了Google Trend获得查询数据，以一类查询为例概括了计算方法。（这篇论文有点复杂分两天阅读）
++ 估计Google的查询量，纯数学的论文，作者认为不同查询的查询量符合zipf分布，论文将这个问题分解为两个子问题，第一个是怎样获取数据，使用了Google Trend获得相对查询数据，结合SEO工具（比较贵，不能做大量查询）的部分绝对数据量找到相对和绝对之间的关系，得到其他查询的绝对量；第二个子问题是怎样通过一些子查询来获取某领域内所有查询的总量，这部分主要介绍了怎样使用采样方法估计该分布的各个参数。最后作者以一类查询（烹饪）为例概括了计算方法。这篇论文数学功底非常强，每个部分都比较了多种方法，如怎么样采样、怎样求参数等，并给出了严格的数学推导。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
