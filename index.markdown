@@ -241,11 +241,14 @@ Kang-Min Kim, Yeachan Kim, Jungho Lee, Ji-Min Lee, and SangKeun Lee. 2019. From 
 Desheng Hu, Shan Jiang, Ronald E. Robertson, and Christo Wilson. 2019. Auditing the Partisanship of Google Search Snippets. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 693–704. DOI:https://doi.org/10.1145/3308558.3313654
 + 分析google搜索索引简介的政治倾向，发现有扩大政治倾向的现象，作者认为这样的现象不是故意的。文章使用了一些简单的NLP方法，首先从一些演讲中提取政治词汇，结果计算索引和原文的政治倾向分数。文章以分析为主，并没有提出算法，分析分类非常清晰，如位置、派系、主题等。
 
-Citation Needed: A Taxonomy and Algorithmic Assessment of Wikipedia’s Verifiability, www19
+Miriam Redi, Besnik Fetahu, Jonathan Morgan, and Dario Taraborelli. 2019. Citation Needed: A Taxonomy and Algorithmic Assessment of Wikipedia’s Verifiability. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 1567–1578. DOI:https://doi.org/10.1145/3308558.3313618
 + 这篇文章很值得借鉴，它提出了wikipedia上的引用问题，以及引用原因，文章花了很大笔墨介绍数据标注过程，分为expert和non-expert两部分，作者详细介绍了为什么要分两类人标注，这样做的可行性，两类人标注结果是否有相似性，另一方面，作者也提出了NN模型来预测是否需要引用，模型很简单，对比的baseline是手动提取特征的模型。文章有很多的可视化。
 
-Estimating the Total Volume of Queries to Google, www19
+Fabrizio Lillo and Salvatore Ruggieri. 2019. Estimating the Total Volume of Queries to Google. In The World Wide Web Conference (WWW ’19). Association for Computing Machinery, New York, NY, USA, 1051–1060. DOI:https://doi.org/10.1145/3308558.3313535
 + 估计Google的查询量，纯数学的论文，作者认为不同查询的查询量符合zipf分布，论文将这个问题分解为两个子问题，第一个是怎样获取数据，使用了Google Trend获得相对查询数据，结合SEO工具（比较贵，不能做大量查询）的部分绝对数据量找到相对和绝对之间的关系，得到其他查询的绝对量；第二个子问题是怎样通过一些子查询来获取某领域内所有查询的总量，这部分主要介绍了怎样使用采样方法估计该分布的各个参数。最后作者以一类查询（烹饪）为例概括了计算方法。这篇论文数学功底非常强，每个部分都比较了多种方法，如怎么样采样、怎样求参数等，并给出了严格的数学推导。
+
+Yang Z, Yang D, Dyer C, et al. Hierarchical attention networks for document classification[C]//Proceedings of the 2016 conference of the North American chapter of the association for computational linguistics: human language technologies. 2016: 1480-1489.
++ 文本分类，使用了两级Encoder+Attention结构，其中Encoder使用了双向的GRU，Attention选择了self-attention，选择的baseline是CNN，LSTM，Conv-GRNN等，对多个数据集进行了测试，本文值得借鉴的一点是其对attention部分的测量和可视化，通过good和bad的attention weight展示证明了模型的有效性。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
