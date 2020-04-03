@@ -250,6 +250,9 @@ Fabrizio Lillo and Salvatore Ruggieri. 2019. Estimating the Total Volume of Quer
 Yang Z, Yang D, Dyer C, et al. Hierarchical attention networks for document classification[C]//Proceedings of the 2016 conference of the North American chapter of the association for computational linguistics: human language technologies. 2016: 1480-1489.
 + 文本分类，使用了两级Encoder+Attention结构，其中Encoder使用了双向的GRU，Attention选择了self-attention，选择的baseline是CNN，LSTM，Conv-GRNN等，对多个数据集进行了测试，本文值得借鉴的一点是其对attention部分的测量和可视化，通过good和bad的attention weight展示证明了模型的有效性。
 
+Shangsong Liang, Xiangliang Zhang, Zhaochun Ren, and Evangelos Kanoulas. 2018. Dynamic Embeddings for User Profiling in Twitter. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 1764–1773. DOI:https://doi.org/10.1145/3219819.3220043
++ 改进了SkipGram，获取Twitter用户和word的动态embedding，因为方法部分太复杂，主要看了评价部分，评价部分主要讨论了该方法获取的Embedding与baseline相比的优势，一些变量（时间片、Embedding维度）对模型的影响、可解释性，数据集的Ground Truth使用了人工标注的结果，分别为Relevance-oriented (RGT) performance 和 Diversity-oriented (DGT) performance.这篇论文的数学性很强，但是可读性比较差，即使是评价部分也以公式为主，描述性的语言很少，可借鉴性不强。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
