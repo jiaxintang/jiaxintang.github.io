@@ -256,6 +256,9 @@ Shangsong Liang, Xiangliang Zhang, Zhaochun Ren, and Evangelos Kanoulas. 2018. D
 Yujing Hu, Qing Da, Anxiang Zeng, Yang Yu, and Yinghui Xu. 2018. Reinforcement Learning to Rank in E-Commerce Search Engine: Formalization, Analysis, and Application. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 368–377. DOI:https://doi.org/10.1145/3219819.3219846
 + 将强化学习运用在搜索排序算法，淘宝的工作，作者认为用户从开始搜索到买某个商品或者退出淘宝是一个完整的session，其中每一次的搜索结果应该是相关的，因此可以使用强化学习来训练这个过程，论文先证明了这个过程是马尔科夫过程，为强化学习的使用提供给了理论依据，使用的reward function类似游戏，只有买的那一次reward是交易价格，其他的reward都是0，在算法上改进了dpg算法，对Q值的loss计算进行了改进。实验部分既有使用用户行为模拟器来进行模拟实验，也有真实A/B test，证明了算法的有效性。
 
+Rahul Bhagat, Srevatsan Muralidharan, Alex Lobzhanidze, and Shankar Vishwanath. 2018. Buy It Again: Modeling Repeat Purchase Recommendations. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 62–70. DOI:https://doi.org/10.1145/3219819.3219891
++ 预测重复购买的行为，亚马逊的工作，作者认为之前没有针对该问题的具体方法，文中提出了4种模型来解决这个问题，在评论部分也是就这4中方法进行了对比，其中前三种RCP（重复购买历史排序）、ATD（正态分布）、PG（Possion-Gamma分布）都是已有方法的应用，MPG针对PG方法进行了一些更贴合场景的改进，作者使用了一些具体的例子来比较这些方法。评价部分分为两部分，offline和online，online部分也是使用了A/B test，用不同的方法分别运行14天，每天对模型进行一次update。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
