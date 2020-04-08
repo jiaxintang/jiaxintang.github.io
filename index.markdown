@@ -259,6 +259,10 @@ Yujing Hu, Qing Da, Anxiang Zeng, Yang Yu, and Yinghui Xu. 2018. Reinforcement L
 Rahul Bhagat, Srevatsan Muralidharan, Alex Lobzhanidze, and Shankar Vishwanath. 2018. Buy It Again: Modeling Repeat Purchase Recommendations. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 62–70. DOI:https://doi.org/10.1145/3219819.3219891
 + 预测重复购买的行为，亚马逊的工作，作者认为之前没有针对该问题的具体方法，文中提出了4种模型来解决这个问题，在评论部分也是就这4中方法进行了对比，其中前三种RCP（重复购买历史排序）、ATD（正态分布）、PG（Possion-Gamma分布）都是已有方法的应用，MPG针对PG方法进行了一些更贴合场景的改进，作者使用了一些具体的例子来比较这些方法。评价部分分为两部分，offline和online，online部分也是使用了A/B test，用不同的方法分别运行14天，每天对模型进行一次update。
 
+Supreeth P. Shashikumar, Amit J. Shah, Gari D. Clifford, and Shamim Nemati. 2018. Detection of Paroxysmal Atrial Fibrillation using Attention-based Bidirectional Recurrent Neural Networks. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 715–723. DOI:https://doi.org/10.1145/3219819.3219912
++ 心颤检测，生物信息学，神经网络结构比较简单，CNN提取特征、RNN提取序列特征、最后通过Attention，并加入了额外的covariant特征，在模型介绍时结合问题本身的特点介绍模型每个模块，评价部分只有一种baseline，比较少，通过t-SNE聚类做了特征可视化，亮点是使用了迁移学习证明了模型可以被迁移到别的数据集上。本文在技术上和写作上亮点都不太突出，但是结构比较完整，可能在18年attention模型的应用也比较少，再加上迁移学习的应用使它能中KDD。
+
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
