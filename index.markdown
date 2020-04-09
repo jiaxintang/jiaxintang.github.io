@@ -262,6 +262,8 @@ Rahul Bhagat, Srevatsan Muralidharan, Alex Lobzhanidze, and Shankar Vishwanath. 
 Supreeth P. Shashikumar, Amit J. Shah, Gari D. Clifford, and Shamim Nemati. 2018. Detection of Paroxysmal Atrial Fibrillation using Attention-based Bidirectional Recurrent Neural Networks. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 715–723. DOI:https://doi.org/10.1145/3219819.3219912
 + 心颤检测，生物信息学，神经网络结构比较简单，CNN提取特征、RNN提取序列特征、最后通过Attention，并加入了额外的covariant特征，在模型介绍时结合问题本身的特点介绍模型每个模块，评价部分只有一种baseline，比较少，通过t-SNE聚类做了特征可视化，亮点是使用了迁移学习证明了模型可以被迁移到别的数据集上。本文在技术上和写作上亮点都不太突出，但是结构比较完整，可能在18年attention模型的应用也比较少，再加上迁移学习的应用使它能中KDD。
 
+Autotune: A Derivative-free Optimization Framework for Hyperparameter Tuning KDD18
++ 调参，论文提出了一种调参的框架，用于machine learning模型，主要是GBDT模型的超参数调参，支持离散和连续的参数，综合考虑了参数的覆盖面以及效率，作者对过去的调参方法进行了列举总结，同时也提出了新的参数选择方法，先使用LHS选择一个起始点，再进行局部的调整，为了提高效率，作者提出了两级并行，即一个模型多个worker，不同参数的的模型也有并行，由于总的进程数量有限，该框架会选择最优的worker数量进行训练。评价部分的指标选择了调参前后的模型正确率。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
