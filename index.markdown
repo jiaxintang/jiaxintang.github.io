@@ -265,6 +265,9 @@ Supreeth P. Shashikumar, Amit J. Shah, Gari D. Clifford, and Shamim Nemati. 2018
 Autotune: A Derivative-free Optimization Framework for Hyperparameter Tuning KDD18
 + 调参，论文提出了一种调参的框架，用于machine learning模型，主要是GBDT模型的超参数调参，支持离散和连续的参数，综合考虑了参数的覆盖面以及效率，作者对过去的调参方法进行了列举总结，同时也提出了新的参数选择方法，先使用LHS选择一个起始点，再进行局部的调整，为了提高效率，作者提出了两级并行，即一个模型多个worker，不同参数的的模型也有并行，由于总的进程数量有限，该框架会选择最优的worker数量进行训练。评价部分的指标选择了调参前后的模型正确率。
 
+Tianfu He, Jie Bao, Ruiyuan Li, Sijie Ruan, Yanhua Li, Chao Tian, and Yu Zheng. 2018. Detecting Vehicle Illegal Parking Events using Sharing Bikes’ Trajectories. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 340–349. DOI:https://doi.org/10.1145/3219819.3219887
++ 利用自行车行车轨迹预测违法停车，文章使用的数据集来自摩拜，ground truth来自朝阳、海淀区的违章停车记录，论文提出的系统主要包括两个部分：预处理部分和预测部分，预处理部分主要是一些清洗数据的工作，作者说明了数据集的优势和不足，剔除了明显不合理的数据，整合了路网数据，并考虑了单双向行驶的问题，预测部分主要基于违章停车会导致行车轨迹出现异常的转向的现象，使用了Kolmogorov-Smirnov test来检测这种异常，在评论部分针对阈值进行了研究，最后作者也根据最终的预测结果分析了一些有趣的现象，如高峰期、节假日的影响等。baseline选择很少，只有本文提出的模型的变体。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
