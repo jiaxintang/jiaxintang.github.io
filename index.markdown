@@ -268,6 +268,9 @@ Autotune: A Derivative-free Optimization Framework for Hyperparameter Tuning KDD
 Tianfu He, Jie Bao, Ruiyuan Li, Sijie Ruan, Yanhua Li, Chao Tian, and Yu Zheng. 2018. Detecting Vehicle Illegal Parking Events using Sharing Bikes’ Trajectories. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’18). Association for Computing Machinery, New York, NY, USA, 340–349. DOI:https://doi.org/10.1145/3219819.3219887
 + 利用自行车行车轨迹预测违法停车，文章使用的数据集来自摩拜，ground truth来自朝阳、海淀区的违章停车记录，论文提出的系统主要包括两个部分：预处理部分和预测部分，预处理部分主要是一些清洗数据的工作，作者说明了数据集的优势和不足，剔除了明显不合理的数据，整合了路网数据，并考虑了单双向行驶的问题，预测部分主要基于违章停车会导致行车轨迹出现异常的转向的现象，使用了Kolmogorov-Smirnov test来检测这种异常，在评论部分针对阈值进行了研究，最后作者也根据最终的预测结果分析了一些有趣的现象，如高峰期、节假日的影响等。baseline选择很少，只有本文提出的模型的变体。
 
+Zhang S., Cheng H. (2018) Exploiting Context Graph Attention for POI Recommendation in Location-Based Social Networks. In: Pei J., Manolopoulos Y., Sadiq S., Li J. (eds) Database Systems for Advanced Applications. DASFAA 2018
++ 使用了两种attention机制来做POI推荐，作者构建了user-user的朋友图，POI-POI图和user-POI的图，其中user-user和POI-POI图使用了普通的attention来分别获取user和POI的embedding，使用了双向的attention来从user-POI图中获取了user和POI的另一个特征。最终将这些结果结合，得到最终的user特征和POI特征，使用MLP将user和POI特征连接后结合。baseline选择了PACE、NCF、ACF，其中NCF和ACF只是普通的推荐算法，不涉及POI推荐。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
