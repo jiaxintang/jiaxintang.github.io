@@ -272,7 +272,7 @@ Zhang S., Cheng H. (2018) Exploiting Context Graph Attention for POI Recommendat
 + 使用了两种attention机制来做POI推荐，作者构建了user-user的朋友图，POI-POI图和user-POI的图，其中user-user和POI-POI图使用了普通的attention来分别获取user和POI的embedding，使用了双向的attention来从user-POI图中获取了user和POI的另一个特征。最终将这些结果结合，得到最终的user特征和POI特征，使用MLP将user和POI特征连接后结合。baseline选择了PACE、NCF、ACF，其中NCF和ACF只是普通的推荐算法，不涉及POI推荐。
 
 Guanjie Zheng, Fuzheng Zhang, Zihan Zheng, Yang Xiang, Nicholas Jing Yuan, Xing Xie, and Zhenhui Li. 2018. DRN: A Deep Reinforcement Learning Framework for News Recommendation. In Proceedings of the 2018 World Wide Web Conference (WWW ’18). International World Wide Web Conferences Steering Committee, Republic and Canton of Geneva, CHE, 167–176. DOI:https://doi.org/10.1145/3178876.3185994
-+ 论文提出了一个很好的想法，使用深度强化学习来做预测，作者认为传统的推荐方法总是推荐相似的物品给用户是不合理的，用户的满意度会递减，另一方面，之前的推荐会对往后的推荐产生影响，即用户看过一篇新闻后就不需要再看内容相同的其他新闻了，因此作者使用了DQN，state特征为用户的特征和新闻相关特征，action特征为用户新闻特征和新闻相关特征，之后action取决于state特征和action特征，而value取决于state特征，关于reward作者认为除了是否点击还有用户活跃度有关，作者针对有序列表改进了DQN的explore过程。
++ 论文提出了一个很好的想法，使用深度强化学习来做预测，作者认为传统的推荐方法总是推荐相似的物品给用户是不合理的，用户的满意度会递减，另一方面，之前的推荐会对往后的推荐产生影响，即用户看过一篇新闻后就不需要再看内容相同的其他新闻了，因此作者使用了DQN，state特征为用户的特征和新闻相关特征，action特征为用户新闻特征和新闻相关特征，之后action取决于state特征和action特征，而value取决于state特征，关于reward作者认为除了是否点击还有用户活跃度有关，作者针对有序列表改进了DQN的explore过程。评价部分提出了一种有意思的评价指标nDCG，考虑到了rank的衰减。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
