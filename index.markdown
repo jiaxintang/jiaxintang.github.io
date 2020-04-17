@@ -318,3 +318,6 @@ Hongzi Mao, Ravi Netravali, and Mohammad Alizadeh. 2017. Neural Adaptive Video S
 
 Daniel S. Berger. 2018. Towards Lightweight and Robust Machine Learning for CDN Caching. In Proceedings of the 17th ACM Workshop on Hot Topics in Networks (HotNets ’18). Association for Computing Machinery, New York, NY, USA, 134–140. DOI:https://doi.org/10.1145/3286062.3286082
 + 利用监督学习来做CDN caching，由于CDN中的状态信息非常复杂，作者认为无论是model-free还是model-based RL训练都需要非常大量的数据，且没有必要使用RL。作者提出了Learning from OPT，首先利用OPT(Optimal Caching Decision)的min-cost flow算法获取过去一段时间的特征，同时利用一些Online的特征，如空余cache大小等，将这些特征输入GBDT分类器，根据得分排名觉得cache的object。
+
+machine learning models and techniques for network performance prediction
++ 测试了不同机器学习方法对网络性能的预测性能，利用前50个单位时间的KPI预测后1个时间的KPI，评价指标为MSE。主要看结论，RNN的预测准确性低且速度慢，而普通的LR、SVM、贝叶斯回归准确性高且速度快，CNN准确性较高但速度慢。其中从准确性角度性能最好的是Regularized Regression，即Lasso回归和Ridge回归。
