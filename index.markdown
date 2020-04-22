@@ -172,6 +172,10 @@ Xiaoli Tang, Tengyun Wang, Haizhi Yang, and Hengjie Song. 2019. AKUPM: Attention
 Xiao Zhou, Cecilia Mascolo, and Zhongxiang Zhao. 2019. Topic-Enhanced Memory Networks for Personalised Point-of-Interest Recommendation. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 3018–3028. DOI:https://doi.org/10.1145/3292500.3330781
 + POI推荐，考虑了时序特征和地理特征，使用memory network来建模check-in数据（使用了attention），TLDA模型来刻画check-in序列的时序特征；为了描述地理特征，作者使用了用户位置影响、POI位置影响和距离影响三个变量。实验部分使用了attention的结果来对比不同模式。
 
+Yue Cui, Liwei Deng, Yan Zhao, Bin Yao, Vincent W. Zheng, and Kai Zheng. 2019. Hidden POI Ranking with Spatial Crowdsourcing. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 814–824. DOI:https://doi.org/10.1145/3292500.3330844
++ 隐藏POI排序，隐藏POI指签到数小于某个阈值的POI，文中还提出了热门POI的概念（签到数大于某个阈值的POI），这篇论文提出的方法是众包的排序方法，即通过worker给给定的两个POI排序的方法决定最终的整体的排序，要解决的问题主要是给哪个人分配哪些POI对已达到最小化工作量、最大化准确度。作者提出这里的POI对指的是一个热门POI和一个隐藏POI，两者能比较的前提是属于同一个类别，地理距离小于一定值。第一步离线任务是找到最小的任务集，使用的是贪心的方法，核心思想是每次添加能和最多隐藏POI比较的热门POI。第二步离线任务是算出每个worker的类别可靠度和地区熟悉程度，使用了改进的X-means聚类。第三步在线任务是POI对的分配，使用的是Tree-Constrained Skip Search，类似于最小生成树的算法。评价部分基于两个数据集（主要写了一个数据集，第二个简述了结论的不同），评价指标为准确度和cpu时间，同时评价了各个超参数的影响。
+
+
 Songgaojun Deng, Huzefa Rangwala, and Yue Ning. 2019. Learning Dynamic Context Graphs for Predicting Social Events. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1007–1016. DOI:https://doi.org/10.1145/3292500.3330919
 + 预测新闻事件，实际是一篇NLP的论文，通过分析新闻的文本来预测事件，提出了动态的GCN模型，作者筛选一些重要单词作为点，出现的文章频率作为边，构建图，因为每天的新闻是不同的，所以图每天都是变化的，利用动态GCN模型和时间特征来预测未来事件，baseline除了LR只有一种之前的事件预测模型，此外还使用了一些提出的模型的变体，除了对预测性能做对比，还给出了一些case study和图的可视化。
 
