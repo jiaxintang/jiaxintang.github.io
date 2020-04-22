@@ -275,6 +275,9 @@ Tianfu He, Jie Bao, Ruiyuan Li, Sijie Ruan, Yanhua Li, Chao Tian, and Yu Zheng. 
 Zhang S., Cheng H. (2018) Exploiting Context Graph Attention for POI Recommendation in Location-Based Social Networks. In: Pei J., Manolopoulos Y., Sadiq S., Li J. (eds) Database Systems for Advanced Applications. DASFAA 2018
 + 使用了两种attention机制来做POI推荐，作者构建了user-user的朋友图，POI-POI图和user-POI的图，其中user-user和POI-POI图使用了普通的attention来分别获取user和POI的embedding，使用了双向的attention来从user-POI图中获取了user和POI的另一个特征。最终将这些结果结合，得到最终的user特征和POI特征，使用MLP将user和POI特征连接后结合。baseline选择了PACE、NCF、ACF，其中NCF和ACF只是普通的推荐算法，不涉及POI推荐。
 
+D. Li, Z. Gong and D. Zhang, "A Common Topic Transfer Learning Model for Crossing City POI Recommendations," in IEEE Transactions on Cybernetics, vol. 49, no. 12, pp. 4282-4295, Dec. 2019.
++ 新城市的POI预测，预测用户从未去过的城市的POI，作者将POI分为不同的topic，一些城市有城市特色的topic，还有一些城市都有的common topic，文章说是使用了迁移学习，其实并没有使用到我们一般意义上的共享参数等，只是提出了common topic的概念，另外作者提出新的城市用户一般倾向于去比较有吸引力的region，因此提出了了吸引度的概念。具体方法使用的是概率图模型，数学推导很复杂。
+
 Guanjie Zheng, Fuzheng Zhang, Zihan Zheng, Yang Xiang, Nicholas Jing Yuan, Xing Xie, and Zhenhui Li. 2018. DRN: A Deep Reinforcement Learning Framework for News Recommendation. In Proceedings of the 2018 World Wide Web Conference (WWW ’18). International World Wide Web Conferences Steering Committee, Republic and Canton of Geneva, CHE, 167–176. DOI:https://doi.org/10.1145/3178876.3185994
 + 论文提出了一个很好的想法，使用深度强化学习来做预测，作者认为传统的推荐方法总是推荐相似的物品给用户是不合理的，用户的满意度会递减，另一方面，之前的推荐会对往后的推荐产生影响，即用户看过一篇新闻后就不需要再看内容相同的其他新闻了，因此作者使用了DQN，state特征为用户的特征和新闻相关特征，action特征为用户新闻特征和新闻相关特征，之后action取决于state特征和action特征，而value取决于state特征，关于reward作者认为除了是否点击还有用户活跃度有关，作者针对有序列表改进了DQN的explore过程。评价部分提出了一种有意思的评价指标nDCG，考虑到了rank的衰减。
 
