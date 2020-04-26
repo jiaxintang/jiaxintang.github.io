@@ -281,6 +281,10 @@ D. Li, Z. Gong and D. Zhang, "A Common Topic Transfer Learning Model for Crossin
 Guanjie Zheng, Fuzheng Zhang, Zihan Zheng, Yang Xiang, Nicholas Jing Yuan, Xing Xie, and Zhenhui Li. 2018. DRN: A Deep Reinforcement Learning Framework for News Recommendation. In Proceedings of the 2018 World Wide Web Conference (WWW ’18). International World Wide Web Conferences Steering Committee, Republic and Canton of Geneva, CHE, 167–176. DOI:https://doi.org/10.1145/3178876.3185994
 + 论文提出了一个很好的想法，使用深度强化学习来做预测，作者认为传统的推荐方法总是推荐相似的物品给用户是不合理的，用户的满意度会递减，另一方面，之前的推荐会对往后的推荐产生影响，即用户看过一篇新闻后就不需要再看内容相同的其他新闻了，因此作者使用了DQN，state特征为用户的特征和新闻相关特征，action特征为用户新闻特征和新闻相关特征，之后action取决于state特征和action特征，而value取决于state特征，关于reward作者认为除了是否点击还有用户活跃度有关，作者针对有序列表改进了DQN的explore过程。评价部分提出了一种有意思的评价指标nDCG，考虑到了rank的衰减。
 
+Ramakrishna Padmanabhan, Aaron Schulman, Dave Levin, and Neil Spring. 2019. Residential links under the weather. In Proceedings of the ACM Special Interest Group on Data Communication (SIGCOMM ’19). Association for Computing Machinery, New York, NY, USA, 145–158. DOI:https://doi.org/10.1145/3341302.3342084
++ 分析天气对网络连接的影响，数据收集方法为Ping，使用了US state weather service获取天气及相应时间未知，MaxMind将地理对应为IP，rDNS获取IP的服务提供商和link类型，数据收集了8年，文章主要分析了不同天气事件、地理未知、连接类型天气影响的不同，分析时引入了传染病学的概念“瞬时死亡率”,发生概率越低的事件需要越多的sample数量。可以参考一下文章的配图。
+
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
