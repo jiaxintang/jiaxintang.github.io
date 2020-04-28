@@ -284,6 +284,9 @@ Guanjie Zheng, Fuzheng Zhang, Zihan Zheng, Yang Xiang, Nicholas Jing Yuan, Xing 
 Ramakrishna Padmanabhan, Aaron Schulman, Dave Levin, and Neil Spring. 2019. Residential links under the weather. In Proceedings of the ACM Special Interest Group on Data Communication (SIGCOMM ’19). Association for Computing Machinery, New York, NY, USA, 145–158. DOI:https://doi.org/10.1145/3341302.3342084
 + 分析天气对网络连接的影响，数据收集方法为Ping，使用了US state weather service获取天气及相应时间未知，MaxMind将地理对应为IP，rDNS获取IP的服务提供商和link类型，数据收集了8年，文章主要分析了不同天气事件、地理未知、连接类型天气影响的不同，分析时引入了传染病学的概念“瞬时死亡率”,发生概率越低的事件需要越多的sample数量。可以参考一下文章的配图。
 
+Discovering Unexpected Local Nonlinear Interactions in Scientific Black-box Models. kdd2019
++ 观察非线性关系，算法比较简单，即采样，计算函数f在x+delta xi、x+delta xj处的取值，计算自定义的函数H，在两个数据集上进行了分析，虽然方法比较简单，但是作者的分析使文章看起来很高大上，可视化做得也较好。
+
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
