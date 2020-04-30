@@ -338,3 +338,8 @@ machine learning models and techniques for network performance prediction
 
 Stochastic Forecasts Achieve High Throughput and Low Delay over Cellular Networks, NSDI 2013
 + 本文提出了一种新的端对端的拥塞控制的传输协议，通过调整发送速率，使其大致匹配当前的蜂窝网络容量，为了实现此目标，Sprout根据数据包到达时间学习蜂窝信道的随机模型，使用可能随时间变化的潜在速率的泊松过程对蜂窝链路进行建模，基础速率的变化是布朗运动。为了证明预测的作用，他们还提出了Sprout的变体Sprout-EWMA，其性能不如Sprout。
+
+Buffer sizing and Video QoE Measurements at Netflix
++ 测量路由buffer大小对Netflix视频传输的影响，结论如下：当buffer减小时，丢包增加、RTT减小、RTT方差减小，因此存在一个最优的buffer size。实验使用了A/B test。Netflix Open Connect架构：路由器有多个input队列，根据一定的调度规则（文中使用DWRRDeficit Weighted
+Round Robin），进入output队列。存在问题：queueing delay过大，各个核之间不公平。
+
