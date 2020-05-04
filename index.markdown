@@ -287,6 +287,8 @@ Ramakrishna Padmanabhan, Aaron Schulman, Dave Levin, and Neil Spring. 2019. Resi
 Discovering Unexpected Local Nonlinear Interactions in Scientific Black-box Models. kdd2019
 + 观察非线性关系，算法比较简单，即采样，计算函数f在x+delta xi、x+delta xj处的取值，计算自定义的函数H，在两个数据集上进行了分析，虽然方法比较简单，但是作者的分析使文章看起来很高大上，可视化做得也较好。
 
+Daizong Ding, Mi Zhang, Xudong Pan, Min Yang, and Xiangnan He. 2019. Modeling Extreme Events in Time Series Prediction. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1114–1122. DOI:https://doi.org/10.1145/3292500.3330896
++ 考虑时间序列中的异常值，作者分析了时间序列中异常值（超出一定阈值）的存在带来的过拟合和欠拟合问题，并依据极端值理论提出了EVL的损失函数，评价部分与普通的时间序列预测方法（LSTM、GRU）进行了对比。这篇论文的角度在于提出了异常值的问题，并基于一定的理论提出了新的损失函数。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
