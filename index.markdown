@@ -290,6 +290,10 @@ Discovering Unexpected Local Nonlinear Interactions in Scientific Black-box Mode
 Daizong Ding, Mi Zhang, Xudong Pan, Min Yang, and Xiangnan He. 2019. Modeling Extreme Events in Time Series Prediction. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 1114–1122. DOI:https://doi.org/10.1145/3292500.3330896
 + 考虑时间序列中的异常值，作者分析了时间序列中异常值（超出一定阈值）的存在带来的过拟合和欠拟合问题，并依据极端值理论提出了EVL的损失函数，评价部分与普通的时间序列预测方法（LSTM、GRU）进行了对比。这篇论文的角度在于提出了异常值的问题，并基于一定的理论提出了新的损失函数。
 
+Guansong Pang, Chunhua Shen, and Anton van den Hengel. 2019. Deep Anomaly Detection with Deviation Networks. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 353–362. DOI:https://doi.org/10.1145/3292500.3330871
++ 恶意用户检测，半监督学习，end-to-end，模型分为三部分，首先使用简单的神经网络获取异常分数，接着基于先验分布（高斯分布）给出正常用户的平均值和方差，最后使用偏差损失函数（Z-score）训练模型，其中异常用户偏离损失函数值大。对于没有标签的数据，视作正常用户。评价部分多个数据集，指标为AUC-ROC和AUC-PR（类似F1-score），做了ablation测试和标注数据多少的影响测试。
+
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
