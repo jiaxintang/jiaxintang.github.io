@@ -293,6 +293,9 @@ Daizong Ding, Mi Zhang, Xudong Pan, Min Yang, and Xiangnan He. 2019. Modeling Ex
 Guansong Pang, Chunhua Shen, and Anton van den Hengel. 2019. Deep Anomaly Detection with Deviation Networks. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD ’19). Association for Computing Machinery, New York, NY, USA, 353–362. DOI:https://doi.org/10.1145/3292500.3330871
 + 恶意用户检测，半监督学习，end-to-end，模型分为三部分，首先使用简单的神经网络获取异常分数，接着基于先验分布（高斯分布）给出正常用户的平均值和方差，最后使用偏差损失函数（Z-score）训练模型，其中异常用户偏离损失函数值大。对于没有标签的数据，视作正常用户。评价部分多个数据集，指标为AUC-ROC和AUC-PR（类似F1-score），做了ablation测试和标注数据多少的影响测试。
 
+X. Chen et al., "Neural Feature Search: A Neural Architecture for Automated Feature Engineering," 2019 IEEE International Conference on Data Mining (ICDM), Beijing, China, 2019, pp. 71-80, doi: 10.1109/ICDM.2019.00017.
++ 特征工程（对原始特征进行转化和结合），首先通过Random Forest筛选出部分原始特征，再使用了RNN来对原始特征进行一元和二元的运算转化，并使用PG强化学习方法来筛选特征，因为使用了RNN，所以可以获取高阶变化后的特征。同时通过控制最高运算阶数等方法避免运算爆炸的问题。评价部分使用了41个数据集，该方法在37个数据集上效果最好。疑问：强化学习部分，Reward为交叉验证后的得分，但是next state没有说明是什么。
+
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
