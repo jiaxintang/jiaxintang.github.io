@@ -296,6 +296,8 @@ Guansong Pang, Chunhua Shen, and Anton van den Hengel. 2019. Deep Anomaly Detect
 X. Chen et al., "Neural Feature Search: A Neural Architecture for Automated Feature Engineering," 2019 IEEE International Conference on Data Mining (ICDM), Beijing, China, 2019, pp. 71-80, doi: 10.1109/ICDM.2019.00017.
 + 特征工程（对原始特征进行转化和结合），首先通过Random Forest筛选出部分原始特征，再使用了RNN来对原始特征进行一元和二元的运算转化，并使用PG强化学习方法来筛选特征，因为使用了RNN，所以可以获取高阶变化后的特征。同时通过控制最高运算阶数等方法避免运算爆炸的问题。评价部分使用了41个数据集，该方法在37个数据集上效果最好。疑问：强化学习部分，Reward为交叉验证后的得分，但是next state没有说明是什么。
 
+Qi, Peng & Cao, Juan & Yang, Tianyun & Guo, Junbo & Li, Jintao. (2019). Exploiting Multi-domain Visual Information for Fake News Detection. 518-527. 10.1109/ICDM.2019.00062. 
++ 利用新闻图片来判断是否为假新闻，问题限制为只利用一幅图片来判断真假新闻。作者认为在物理方面，假新闻图片由于多次压缩清晰度更低且有某些周期性特征，因此使用DCT傅里叶变化转为频域后使用CNN来提取特征；在语义方面，作者使用了多层CNN+双向GRU来提取特征。最后使用attention机制来融合这两方面的特征。与其他基本的图片处理方法相比，效果更好。在实验部分，作者也将该方法与已有的假新闻判断方法相结合，证明可以利用图片信息提高现有假新闻判断方法的准确率。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
