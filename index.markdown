@@ -281,6 +281,9 @@ D. Li, Z. Gong and D. Zhang, "A Common Topic Transfer Learning Model for Crossin
 Guanjie Zheng, Fuzheng Zhang, Zihan Zheng, Yang Xiang, Nicholas Jing Yuan, Xing Xie, and Zhenhui Li. 2018. DRN: A Deep Reinforcement Learning Framework for News Recommendation. In Proceedings of the 2018 World Wide Web Conference (WWW ’18). International World Wide Web Conferences Steering Committee, Republic and Canton of Geneva, CHE, 167–176. DOI:https://doi.org/10.1145/3178876.3185994
 + 论文提出了一个很好的想法，使用深度强化学习来做预测，作者认为传统的推荐方法总是推荐相似的物品给用户是不合理的，用户的满意度会递减，另一方面，之前的推荐会对往后的推荐产生影响，即用户看过一篇新闻后就不需要再看内容相同的其他新闻了，因此作者使用了DQN，state特征为用户的特征和新闻相关特征，action特征为用户新闻特征和新闻相关特征，之后action取决于state特征和action特征，而value取决于state特征，关于reward作者认为除了是否点击还有用户活跃度有关，作者针对有序列表改进了DQN的explore过程。评价部分提出了一种有意思的评价指标nDCG，考虑到了rank的衰减。
 
+Yu, Junliang & Gao, Min & Yin, Hongzhi & Li, Jundong & Wang, Qinyong & Gao, Chongming. (2019). Generating Reliable Friends via Adversarial Training to Improve Social Recommendation. 10.1109/ICDM.2019.00087. 
++ 推荐系统，作者认为传统的推荐系统运用社交信息时总是基于朋友之间都具有相似性，这是不合理的，因为很多朋友都是随手加的且关系种类比较复杂，因此，作者通过GAN来筛选一些比较reliable的朋友关系，作者使用了GDAE（一种autoencoder）从种子朋友中重生成社交关系，并提出了基于Gumber(0,1)的噪声来优化PG，discriminater使用了常见的BPR。疑问：作者在种子朋友的获取和意义上表述得不太明确。
+
 Ramakrishna Padmanabhan, Aaron Schulman, Dave Levin, and Neil Spring. 2019. Residential links under the weather. In Proceedings of the ACM Special Interest Group on Data Communication (SIGCOMM ’19). Association for Computing Machinery, New York, NY, USA, 145–158. DOI:https://doi.org/10.1145/3341302.3342084
 + 分析天气对网络连接的影响，数据收集方法为Ping，使用了US state weather service获取天气及相应时间未知，MaxMind将地理对应为IP，rDNS获取IP的服务提供商和link类型，数据收集了8年，文章主要分析了不同天气事件、地理未知、连接类型天气影响的不同，分析时引入了传染病学的概念“瞬时死亡率”,发生概率越低的事件需要越多的sample数量。可以参考一下文章的配图。
 
