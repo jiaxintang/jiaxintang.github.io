@@ -302,6 +302,9 @@ X. Chen et al., "Neural Feature Search: A Neural Architecture for Automated Feat
 Qi, Peng & Cao, Juan & Yang, Tianyun & Guo, Junbo & Li, Jintao. (2019). Exploiting Multi-domain Visual Information for Fake News Detection. 518-527. 10.1109/ICDM.2019.00062. 
 + 利用新闻图片来判断是否为假新闻，问题限制为只利用一幅图片来判断真假新闻。作者认为在物理方面，假新闻图片由于多次压缩清晰度更低且有某些周期性特征，因此使用DCT傅里叶变化转为频域后使用CNN来提取特征；在语义方面，作者使用了多层CNN+双向GRU来提取特征。最后使用attention机制来融合这两方面的特征。与其他基本的图片处理方法相比，效果更好。在实验部分，作者也将该方法与已有的假新闻判断方法相结合，证明可以利用图片信息提高现有假新闻判断方法的准确率。
 
+Altaf, Basmah & Akujuobi, Uchenna & Yu, Lu & Zhang, Xiangliang. (2019). Dataset Recommendation via Variational Graph Autoencoder. 11-20. 10.1109/ICDM.2019.00011. 
++ 根据查询的论文推荐一些使用的数据库，文中使用Variational Graph Autoencoder根据paper-dataset关系二分图，paper引用图和paper内容图来获取paper和dataset的embedding，算法部分介绍很详细，对普通的Variational Graph Autoencoder进行了改进。实验部分选择了Delve的数据（8519篇论文5610个数据库），ground truth选择很巧妙，每次查询使用一篇论文的reference列表，ground truth就是这篇论文使用的数据库。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
