@@ -303,7 +303,7 @@ Qi, Peng & Cao, Juan & Yang, Tianyun & Guo, Junbo & Li, Jintao. (2019). Exploiti
 + 利用新闻图片来判断是否为假新闻，问题限制为只利用一幅图片来判断真假新闻。作者认为在物理方面，假新闻图片由于多次压缩清晰度更低且有某些周期性特征，因此使用DCT傅里叶变化转为频域后使用CNN来提取特征；在语义方面，作者使用了多层CNN+双向GRU来提取特征。最后使用attention机制来融合这两方面的特征。与其他基本的图片处理方法相比，效果更好。在实验部分，作者也将该方法与已有的假新闻判断方法相结合，证明可以利用图片信息提高现有假新闻判断方法的准确率。
 
 Altaf, Basmah & Akujuobi, Uchenna & Yu, Lu & Zhang, Xiangliang. (2019). Dataset Recommendation via Variational Graph Autoencoder. 11-20. 10.1109/ICDM.2019.00011. 
-+ 根据查询的论文推荐一些使用的数据库，文中使用Variational Graph Autoencoder根据paper-dataset关系二分图，paper引用图和paper内容图来获取paper和dataset的embedding，算法部分介绍很详细，对普通的Variational Graph Autoencoder进行了改进。实验部分选择了Delve的数据（8519篇论文5610个数据库），ground truth选择很巧妙，每次查询使用一篇论文的reference列表，ground truth就是这篇论文使用的数据库。
++ 根据查询的论文推荐一些使用的数据库，文中使用Variational Graph Autoencoder根据paper-dataset关系二分图，paper引用图和paper内容图来获取paper和dataset的embedding，算法部分介绍很详细，由于是多个图，所以对普通的Variational Graph Autoencoder进行了改进。实验部分选择了Delve的数据（8519篇论文5610个数据库），ground truth选择很巧妙，每次查询使用一篇论文的reference列表，ground truth就是这篇论文使用的数据库。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
