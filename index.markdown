@@ -305,6 +305,9 @@ Qi, Peng & Cao, Juan & Yang, Tianyun & Guo, Junbo & Li, Jintao. (2019). Exploiti
 Altaf, Basmah & Akujuobi, Uchenna & Yu, Lu & Zhang, Xiangliang. (2019). Dataset Recommendation via Variational Graph Autoencoder. 11-20. 10.1109/ICDM.2019.00011. 
 + 根据查询的论文推荐一些使用的数据库，文中使用Variational Graph Autoencoder根据paper-dataset关系二分图，paper引用图和paper内容图来获取paper和dataset的embedding，算法部分介绍很详细，由于是多个图，所以对普通的Variational Graph Autoencoder进行了改进。实验部分选择了Delve的数据（8519篇论文5610个数据库），ground truth选择很巧妙，每次查询使用一篇论文的reference列表，ground truth就是这篇论文使用的数据库。
 
+Huang, Chen & Li, Peiyan & Gao, Chongming & Yang, Qinli & Shao, Junming. (2019). Online Budgeted Least Squares with Unlabeled Data. 10.1109/ICDM.2019.00041. 
++ 半监督学习一般分为两种，一种是根据聚类算法，另一种是online manifold model。这篇文章提出了一种新的在线半监督学习方法，提出了closed-form transductive and inductive solutions。文章较复杂，有很多专业术语。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
