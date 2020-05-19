@@ -306,7 +306,7 @@ Altaf, Basmah & Akujuobi, Uchenna & Yu, Lu & Zhang, Xiangliang. (2019). Dataset 
 + 根据查询的论文推荐一些使用的数据库，文中使用Variational Graph Autoencoder根据paper-dataset关系二分图，paper引用图和paper内容图来获取paper和dataset的embedding，算法部分介绍很详细，由于是多个图，所以对普通的Variational Graph Autoencoder进行了改进。实验部分选择了Delve的数据（8519篇论文5610个数据库），ground truth选择很巧妙，每次查询使用一篇论文的reference列表，ground truth就是这篇论文使用的数据库。
 
 Huang, Chen & Li, Peiyan & Gao, Chongming & Yang, Qinli & Shao, Junming. (2019). Online Budgeted Least Squares with Unlabeled Data. 10.1109/ICDM.2019.00041. 
-+ 半监督学习一般分为两种，一种是根据聚类算法，另一种是online manifold model。这篇文章提出了一种新的在线半监督学习方法，提出了closed-form transductive and inductive solutions。文章较复杂，有很多专业术语。
++ 理论文章，半监督学习一般分为两种，一种是根据聚类算法，另一种是online manifold model。这篇文章提出了一种新的在线半监督学习方法，提出了closed-form transductive and inductive solutions。文章较复杂，有很多专业术语，需要先系统地看过之前的半监督学习工作再重读。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
