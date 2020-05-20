@@ -308,6 +308,9 @@ Altaf, Basmah & Akujuobi, Uchenna & Yu, Lu & Zhang, Xiangliang. (2019). Dataset 
 Huang, Chen & Li, Peiyan & Gao, Chongming & Yang, Qinli & Shao, Junming. (2019). Online Budgeted Least Squares with Unlabeled Data. 10.1109/ICDM.2019.00041. 
 + 理论文章，半监督学习一般分为两种，一种是根据聚类算法，另一种是online manifold model。这篇文章提出了一种新的在线半监督学习方法，提出了closed-form transductive and inductive solutions。文章较复杂，有很多专业术语，需要先系统地看过之前的半监督学习工作再重读。
 
+Towards Making Deep Transfer Learning Never Hurt ICDM 2019
++ 提出了一种新的迁移学习的策略，过去的迁移学习L2-SP主要是使用源网络的参数权重作为目标网络的训练起点，正则化项为源网络和目标网络的平方欧式距离，这种方法允许源网络和目标网络存在参数权重的不同，目标是最小化经验损失，但是这种方法的正则化项可能会导致目标网络的性能更差。论文提出了一种新的深度迁移学习策略DTNH，每轮训练时，分开计算经验损失和正则化项，在保留正则化项的同时找到最小化经验损失的梯度方向。
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
