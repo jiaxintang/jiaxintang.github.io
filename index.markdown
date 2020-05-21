@@ -309,7 +309,7 @@ Huang, Chen & Li, Peiyan & Gao, Chongming & Yang, Qinli & Shao, Junming. (2019).
 + 理论文章，半监督学习一般分为两种，一种是根据聚类算法，另一种是online manifold model。这篇文章提出了一种新的在线半监督学习方法，提出了closed-form transductive and inductive solutions。文章较复杂，有很多专业术语，需要先系统地看过之前的半监督学习工作再重读。
 
 Towards Making Deep Transfer Learning Never Hurt ICDM 2019
-+ 提出了一种新的迁移学习的策略，过去的迁移学习L2-SP主要是使用源网络的参数权重作为目标网络的训练起点，正则化项为源网络和目标网络的平方欧式距离，这种方法允许源网络和目标网络存在参数权重的不同，目标是最小化经验损失，但是这种方法的正则化项可能会导致目标网络的性能更差。论文提出了一种新的深度迁移学习策略DTNH，每轮训练时，分开计算经验损失和正则化项，在保留正则化项的同时找到最小化经验损失的梯度方向。
++ 提出了一种新的迁移学习的策略，过去的迁移学习L2-SP主要是使用源网络的参数权重作为目标网络的训练起点，正则化项为源网络和目标网络的平方欧式距离，这种方法允许源网络和目标网络存在参数权重的不同，目标是最小化经验损失，但是这种方法的正则化项可能会导致目标网络的性能更差。论文提出了一种新的深度迁移学习策略DTNH，每轮训练时，分开计算经验损失和正则化项，在保留正则化项的同时找到最小化经验损失的梯度方向。本文也是一篇理论文章，但是使用的数学基础比较简单。注意本文的discussion部分，可能由于时间有限，文中的对比实验较少，有一些state-of-the-art没有对比，在这部分做了简单的理论分析。
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
