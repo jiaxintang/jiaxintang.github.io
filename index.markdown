@@ -311,6 +311,10 @@ Huang, Chen & Li, Peiyan & Gao, Chongming & Yang, Qinli & Shao, Junming. (2019).
 Towards Making Deep Transfer Learning Never Hurt ICDM 2019
 + 提出了一种新的迁移学习的策略，过去的迁移学习L2-SP主要是使用源网络的参数权重作为目标网络的训练起点，正则化项为源网络和目标网络的平方欧式距离，这种方法允许源网络和目标网络存在参数权重的不同，目标是最小化经验损失，但是这种方法的正则化项可能会导致目标网络的性能更差。论文提出了一种新的深度迁移学习策略DTNH，每轮训练时，分开计算经验损失和正则化项，在保留正则化项的同时找到最小化经验损失的梯度方向。本文也是一篇理论文章，但是使用的数学基础比较简单。注意本文的discussion部分，可能由于时间有限，文中的对比实验较少，有一些state-of-the-art没有对比，在这部分做了简单的理论分析。
 
+SeiSMo: Semi-supervised Time Series Motif Discovery for Seismic Signal Detection CIKM 2019
++ 提出了一种时间序列推荐的方法来预测地震。论文使用时间窗口，并定义了两个时间窗口之间的距离概念，构建了时间窗口图，最近的邻居（距离小）之间有边相连，分析了该图的属性，定义了sink的概念，并运用该概念来找到相似的时间窗口，预测事件。在分析部分使用了实际数据集，同时对几个地区的地震进行了case study分析。但是这篇论文并没有强调半监督体现在哪儿。
+
+
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
 + 关于Buffer size的一篇论文，作者设计并实现了一种拥塞控制协议MPC，亮点是对未来的瓶颈速率进行了预测。作者对buffer size分析的结论如下：（1）Buffer size很大（BDP的很多倍）时，丢包会很高；（2）Buffer size很低时，吞吐量和RTT会很稳定；（3）Buffer size很大或很小时都会使得吞吐量和瓶颈链路不相符；（4）适当增加buffer size会使得更容易达到瓶颈链路。总之，作者认为buffer size应该设为1/4 BDP比较合理，但是当有很多短流时，可以更大一点。
