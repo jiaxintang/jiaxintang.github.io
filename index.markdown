@@ -371,3 +371,6 @@ Buffer sizing and Video QoE Measurements at Netflix
 
 Cocoa: Congestion Control Aware Queuing
 + 文章认为CoDel的目标（瓶颈链路排队时延在5ms以内）仍然存在一定缺陷，提出了Cocoa，可适配与BBR，其策略如下：目标为最大化吞吐量最小化时延，当link有空闲则按空闲比例增大buffer，当排队时间大于等于GI时，则根据排队减小buffer，为此，作者提出了Guard Interval（GI，没有丢包的最长时间间隔）和Longest Interval的概念。算法有两个参数：最大buffer增长量和最大GI。实验部分为单发送端接收端经过一个交换机，在中间时间突然加倍capacity或减小capacity。注：文中有非常清晰的buffer size影响的示意图。
+
+Do Switches Dream of Machine Learning? Toward In-Network Classification
++ P4实现简单的机器学习算法，分析了在交换机上实现机器学习算法的优势，使用match-action pipeline查表的方法来避免大量复杂的运算，使用硬件设计来优化资源分配。实验部分分为软件部分和硬件部分，软件部分使用sklearn实现机器学习算法，硬件部分使用P4和NetFPGA。以IoT Traffic为例展示了实验结果，即资源利用情况。
