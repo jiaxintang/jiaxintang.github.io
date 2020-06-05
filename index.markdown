@@ -314,6 +314,9 @@ Towards Making Deep Transfer Learning Never Hurt ICDM 2019
 SeiSMo: Semi-supervised Time Series Motif Discovery for Seismic Signal Detection CIKM 2019
 + 提出了一种时间序列推荐的方法来预测地震。论文使用时间窗口，并定义了两个时间窗口之间的距离概念，构建了时间窗口图，最近的邻居（距离小）之间有边相连，分析了该图的属性，定义了sink的概念，并运用该概念来找到相似的时间窗口，预测事件。在分析部分使用了实际数据集，同时对几个地区的地震进行了case study分析。但是这篇论文并没有强调半监督体现在哪儿。
 
+Geolocating Tweets in any Language at any Location CIKM 2019
++ NLP论文，根据tweet预测具体问题，由于tweet的语言可能会对位置预测产生影响，因此不能使用翻译后的tweet，方法为基于character的encoder和CNN的连接，神经网络部分方法较简单，关键在于encoder编码的设计。
+
 
 ### Reinforcement Learning & Network
 Lynn, T., Hanford, N., & Ghosal, D. Impact of Buffer Size on a Congestion Control Algorithm Based on Model Predictive Control.
