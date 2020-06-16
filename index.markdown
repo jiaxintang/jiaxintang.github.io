@@ -98,6 +98,10 @@ Recent Research on Massive MIMO Propagation Channels: A Survey
 A Survey of Point-of-Interest Recommendation in Location-Based Social Networks
 + AAAI,15 workshop，按照主要影响的特征对方法进行分类
 
+Shuai Zhang, Lina Yao, Aixin Sun, and Yi Tay. 2019. Deep Learning Based Recommender System: A Survey and New Perspectives. ACM Comput. Surv. 52, 1, Article 5 (February 2019), 38 pages. DOI:https://doi.org/10.1145/3285029
++ 基于使用的模型进行分类，两大类，单独Neural Building block和Deep Hybrid Model，其中第一类又根据具体模型分类，如MLP、AE、CNN和RNN，每一小类中还根据具体用途再次分了类，如feature representation learning、Neural Collaborative Filtering等，或再根据具体方法分类。对于未来工作，作者认为有Joint Representation Learning、可解释学习、cross-domain、Multi-Task Learning等。我认为这篇survey分类太细，同时每一小节的分类标准又不太一样，有点乱。
+
+
 ### Application of ML
 
 Srijan Kumar, Francesca Spezzano, and V.S. Subrahmanian. 2015. VEWS: A Wikipedia Vandal Early Warning System. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’15). Association for Computing Machinery, New York, NY, USA, 607–616. DOI:https://doi.org/10.1145/2783258.2783367
